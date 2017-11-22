@@ -12,6 +12,7 @@ const sessionReducer = (state = _nullSession, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
+      // console.log(currentUser);
       return merge({}, { currentUser });
     // case LOGOUT_CURRENT_USER:
     //   return _nullSession;
