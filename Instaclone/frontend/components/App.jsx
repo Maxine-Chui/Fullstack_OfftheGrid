@@ -12,7 +12,7 @@ import SessionFormContainer from './session_form/session_form_container';
 const App = () => (
   <div>
     <header>
-      <h1>Instaclone</h1>
+      <h1 className="big-title">Shinstagram</h1>
       <GreetingContainer />
     </header>
 
