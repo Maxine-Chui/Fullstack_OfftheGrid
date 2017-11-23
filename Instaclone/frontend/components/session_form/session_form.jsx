@@ -44,9 +44,9 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup" className="login-form-button">Sign up</Link>;
+      return <Link to="/signup">Sign up</Link>;
       } else {
-        return <Link to="/login"className="login-form-button">Log in</Link>;
+        return <Link to="/login">Log in</Link>;
     }
   }
 
@@ -55,46 +55,49 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'signup'){
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-blurb">
-          Sign up to see photos and videos from your friends
-          <br/>
-          <button className="login-form-button">Log in Demo User</button>
+        <div className="login-form-subcontainer">
+          <div className="login-form-logo">Shinstagram</div>
+          <div className="login-form-blurb">Sign up to see photos and videos from your friends.</div>
+          <form onSubmit={this.handleSubmit}>
+            <button className="login-form-button">Log in Demo User</button>
 
-          <div className="login-form">
-            <br/>
-            <label>
-              <input type="text"
-                placeholder="Username"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-                />
-            </label>
-            <br/>
-            <label>
-              <input type="text"
-                placeholder="Email"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="login-input"
-                />
-            </label>
-            <br/>
-            <label>
-              <input type="password"
-                placeholder="Password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-                />
-            </label>
-            <br/>
-            <input className="login-form-button" type="submit" value="Sign Up"/>
-          </div>
+            <div className="login-form">
+              <br/>
+              <label>
+                <input type="text"
+                  placeholder="Username"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  className="login-input"
+                  />
+              </label>
+              <br/>
+              <label>
+                <input type="text"
+                  placeholder="Email"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  className="login-input"
+                  />
+              </label>
+              <br/>
+              <label>
+                <input type="password"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input"
+                  />
+              </label>
+              <br/>
+              <input className="login-form-button" type="submit" value="Sign Up"/>
+            </div>
+            <div className="login-terms">By signing up, you agree to our Terms & Privacy Policy</div>
 
 
-        <div className="login-form-errors">{this.renderErrors()}</div>
-        </form>
+          <div className="login-form-errors">{this.renderErrors()}</div>
+          </form>
+        </div>
         <div className="login-form-secondary">Have an account? &nbsp;
           <span className="login-form-alt-link">{this.navLink()}</span>
         </div>
@@ -103,33 +106,36 @@ class SessionForm extends React.Component {
   } else {
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-blurb">
-          <button className="login-form-button">Log in Demo User</button>
+        <div className="login-form-subcontainer">
+          <div className="login-form-logo">Shinstagram</div>
+          <form onSubmit={this.handleSubmit} className="login-form-blurb">
+            <button className="login-form-button">Log in Demo User</button>
 
-          <div className="login-form">
-            <br/>
-            <label>
-              <input type="text"
-                placeholder="Username"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-                />
-            </label>
-            <br/>
-            <label>
-              <input type="password"
-                placeholder="Password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-                />
-            </label>
-            <br/>
-            <input className="login-form-button" type="submit" value="Log In" />
-          </div>
-        <div className="login-form-errors">{this.renderErrors()}</div>
-        </form>
+            <div className="login-form">
+              <br/>
+              <label>
+                <input type="text"
+                  placeholder="Username"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  className="login-input"
+                  />
+              </label>
+              <br/>
+              <label>
+                <input type="password"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input"
+                  />
+              </label>
+              <br/>
+              <input className="login-form-button" type="submit" value="Log In" />
+            </div>
+          <div className="login-form-errors">{this.renderErrors()}</div>
+          </form>
+        </div>
         <div className="login-form-secondary">Don't have an account? &nbsp;
           <span className="login-form-alt-link">{this.navLink()}</span>
         </div>

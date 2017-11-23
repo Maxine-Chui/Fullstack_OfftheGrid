@@ -27,3 +27,5 @@ const Greeting = ({ currentUser, logout }) => (
 );
 
 export default Greeting;
+
+// .then(() => this.props.history.push('/login'))
