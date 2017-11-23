@@ -14,6 +14,9 @@ class Api::PostsController < ApplicationController
     @post.destroy
   end
 
+  def index
+    @posts = Post.all
+  end
 
   private
   def post_params
