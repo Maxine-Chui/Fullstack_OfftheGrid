@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
           <div className="login-form-blurb">Sign up to see photos and videos from your friends.</div>
           <form onSubmit={this.handleSubmit}>
             <button className="login-form-button">Log in Demo User</button>
-
+            <h2 className="login-form-or"><span>OR</span></h2>
             <div className="login-form">
               <br/>
               <label>

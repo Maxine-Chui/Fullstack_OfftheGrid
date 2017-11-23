@@ -1,6 +1,6 @@
 .login-form-logo {
   font-family: $pacifico;
-  font-size: 32px;
+  font-size: 36px;
   padding: 2px;
 }
 
@@ -9,7 +9,7 @@
   color: $gray;
   font-weight: 500;
   font-size: 18px;
-  width: 250px;
+  width: 220px;
   margin: 0 auto;
   padding: 5px;
 }
@@ -38,6 +38,25 @@
   font-size: 14px;
 }
 
+.login-form-or {
+  // font-size: 14px;
+  // color: $gray;
+  // padding-top: 5px;
+  width: 270px;
+  // text-align: center;
+  margin: auto;
+  border-bottom: 1px solid $light-gray;
+  line-height: 0.1em;
+  margin: 13px 0 10px 18px;
+}
+
+.login-form-or span{
+  font-size: 14px;
+  color: $gray;
+  padding: 0 20px;
+  background-color: white;
+}
+
 .login-input {
   width: 270px;
   // padding: 5px 0;
@@ -55,7 +74,7 @@
 
 .login-form-button {
   margin: 10px 0px;
-  padding: 5px 0;
+  padding: 6px 0;
   width: 270px;
   background-color: $button-blue;
   color: white;
