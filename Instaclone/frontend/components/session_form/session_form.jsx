@@ -10,6 +10,8 @@ class SessionForm extends React.Component {
       email: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.logInDemoUser = this.logInDemoUser.bind(this);
+    // this.navLink = this.navLink.bind(this);
   }
 
   handleSubmit(e){
@@ -43,101 +45,117 @@ class SessionForm extends React.Component {
   }
 
   navLink() {
-    if (this.props.formType === 'login') {
+    if (this.props.formType === 'login' || this.props.formType === '') {
       return <Link to="/signup">Sign up</Link>;
       } else {
         return <Link to="/login">Log in</Link>;
     }
   }
 
+  logInDemoUser(e) {
+    e.preventDefault();
+    this.state = {
+      username: 'user1',
+      password: 'useruser1',
+      email: 'user1@user1.com'
+    };
+    const user = this.state;
+    this.props.login(user);
+  }
 
   render() {
     if (this.props.formType === 'signup'){
     return (
-      <div className="login-form-container">
-        <div className="login-form-subcontainer">
-          <div className="login-form-logo">Shinstagram</div>
-          <div className="login-form-blurb">Sign up to see photos and videos from your friends.</div>
-          <form onSubmit={this.handleSubmit}>
-            <button className="login-form-button">Log in Demo User</button>
-            <h2 className="login-form-or"><span>OR</span></h2>
-            <div className="login-form">
-              <br/>
-              <label>
-                <input type="text"
-                  placeholder="Username"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                  className="login-input"
-                  />
-              </label>
-              <br/>
-              <label>
-                <input type="text"
-                  placeholder="Email"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  className="login-input"
-                  />
-              </label>
-              <br/>
-              <label>
-                <input type="password"
-                  placeholder="Password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="login-input"
-                  />
-              </label>
-              <br/>
-              <input className="login-form-button" type="submit" value="Sign Up"/>
-            </div>
-            <div className="login-terms">By signing up, you agree to our Terms & Privacy Policy</div>
+      <div className="login-page-container">
+        <img id="login-img" src="http://res.cloudinary.com/dqhhpt0sj/image/upload/v1511399842/Screen_Shot_2017-11-22_at_5.04.43_PM_copy_ciucwb.png"/>
+        <div className="login-form-container">
+          <div className="login-form-subcontainer">
+            <div className="login-form-logo">Shinstagram</div>
+            <div className="login-form-blurb">Sign up to see photos and videos from your friends.</div>
+            <form onSubmit={this.handleSubmit}>
+              <button className="login-form-button" onClick={this.logInDemoUser}>Log in Demo User</button>
+              <div className="login-form-or"><span>OR</span></div>
+              <div className="login-form">
+                <br/>
+                <label>
+                  <input type="text"
+                    placeholder="Username"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className="login-input"
+                    />
+                </label>
+                <br/>
+                <label>
+                  <input type="text"
+                    placeholder="Email"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    className="login-input"
+                    />
+                </label>
+                <br/>
+                <label>
+                  <input type="password"
+                    placeholder="Password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className="login-input"
+                    />
+                </label>
+                <br/>
+                <input className="login-form-button" type="submit" value="Sign Up"/>
+              </div>
+              <div className="login-form-errors">{this.renderErrors()}</div>
 
+              <div className="login-terms">By signing up, you agree to our Terms & Privacy Policy</div>
 
-          <div className="login-form-errors">{this.renderErrors()}</div>
-          </form>
-        </div>
-        <div className="login-form-secondary">Have an account? &nbsp;
-          <span className="login-form-alt-link">{this.navLink()}</span>
+            </form>
+          </div>
+          <div className="login-form-secondary">Have an account? &nbsp;
+            <span className="login-form-alt-link">{this.navLink()}</span>
+          </div>
         </div>
       </div>
     );
   } else {
     return (
-      <div className="login-form-container">
-        <div className="login-form-subcontainer">
-          <div className="login-form-logo">Shinstagram</div>
-          <form onSubmit={this.handleSubmit} className="login-form-blurb">
-            <button className="login-form-button">Log in Demo User</button>
+      <div className="login-page-container">
+        <img id="login-img" src="http://res.cloudinary.com/dqhhpt0sj/image/upload/v1511399842/Screen_Shot_2017-11-22_at_5.04.43_PM_copy_ciucwb.png"/>
+        <div className="login-form-container">
+          <div className="login-form-subcontainer">
+            <div className="login-form-logo">Shinstagram</div>
+            <form onSubmit={this.handleSubmit}>
+              <button className="login-form-button" onClick={this.logInDemoUser}>Log in Demo User</button>
 
-            <div className="login-form">
-              <br/>
-              <label>
-                <input type="text"
-                  placeholder="Username"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                  className="login-input"
-                  />
-              </label>
-              <br/>
-              <label>
-                <input type="password"
-                  placeholder="Password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="login-input"
-                  />
-              </label>
-              <br/>
-              <input className="login-form-button" type="submit" value="Log In" />
-            </div>
-          <div className="login-form-errors">{this.renderErrors()}</div>
-          </form>
-        </div>
-        <div className="login-form-secondary">Don't have an account? &nbsp;
-          <span className="login-form-alt-link">{this.navLink()}</span>
+              <div className="login-form">
+                <br/>
+                <label>
+                  <input type="text"
+                    placeholder="Username"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className="login-input"
+                    />
+                </label>
+                <br/>
+                <label>
+                  <input type="password"
+                    placeholder="Password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className="login-input"
+                    />
+                </label>
+                <br/>
+                <input className="login-form-button" type="submit" value="Log In" />
+              </div>
+              <div className="login-form-errors">{this.renderErrors()}</div>
+            </form>
+          </div>
+          <div className="login-form-secondary">Don't have an account? &nbsp;
+            <span className="login-form-alt-link">{this.navLink()}</span>
+          </div>
         </div>
       </div>
     );
