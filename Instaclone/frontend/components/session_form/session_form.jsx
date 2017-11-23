@@ -67,8 +67,7 @@ class SessionForm extends React.Component {
     this.props.login(user);
   }
 
-  render() {
-    if (this.props.formType === 'signup'){
+  signUpForm() {
     return (
       <div className="login-page-container">
         <img id="login-img" src="http://res.cloudinary.com/dqhhpt0sj/image/upload/v1511399842/Screen_Shot_2017-11-22_at_5.04.43_PM_copy_ciucwb.png"/>
@@ -122,8 +121,10 @@ class SessionForm extends React.Component {
         </div>
       </div>
     );
-  } else {
-    return (
+  }
+
+  signInForm() {
+    return(
       <div className="login-page-container">
         <img id="login-img" src="http://res.cloudinary.com/dqhhpt0sj/image/upload/v1511399842/Screen_Shot_2017-11-22_at_5.04.43_PM_copy_ciucwb.png"/>
         <div className="login-form-container">
@@ -164,6 +165,13 @@ class SessionForm extends React.Component {
       </div>
     );
   }
+
+  render() {
+    if (this.props.formType === 'signup'){
+      return this.signUpForm();
+    } else {
+      return this.signInForm();
+    }
   }
 }
 // <div className="login-form-box"> {this.props.formType} </div>
