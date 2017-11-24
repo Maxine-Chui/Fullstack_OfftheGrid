@@ -11,7 +11,6 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.logInDemoUser = this.logInDemoUser.bind(this);
-    // this.navLink = this.navLink.bind(this);
   }
 
   handleSubmit(e){
@@ -27,7 +26,7 @@ class SessionForm extends React.Component {
   }
 
   componentWillUnmount(){
-    this.props.clearErrors([]);
+    this.props.clearErrors();
   }
 
   update(field) {

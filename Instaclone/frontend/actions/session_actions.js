@@ -18,8 +18,8 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const clearErrors = errors => dispatch => (
-  dispatch(receiveErrors(errors))
+export const clearErrors = () => dispatch => (
+  dispatch(receiveErrors([]))
 );
 
 export const signup = user => dispatch => (
