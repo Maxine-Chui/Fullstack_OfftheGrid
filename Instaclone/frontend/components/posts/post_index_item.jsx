@@ -10,7 +10,7 @@ class PostIndexItem extends React.Component {
         <div className="post">
           <div className="post-item-top">
               <div className="post-item-top-text">
-                <div className="post-author">{this.props.post.username}</div>
+                <Link to={`/users/${this.props.post.author_id}`}><div className="post-author">{this.props.post.username}</div></Link>
                 <div className="post-location">{this.props.post.location}</div>
               </div>
             </div>
