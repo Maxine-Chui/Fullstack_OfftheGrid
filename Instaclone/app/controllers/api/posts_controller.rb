@@ -18,7 +18,11 @@ class Api::PostsController < ApplicationController
   def index
     # @user = current_user
     # @posts = @user.posts
-    @posts = Post.all
+    if params[:user_id]
+      @posts = User.find(params[:user_id]).posts
+    else
+      @posts = Post.all
+    end
   end
 
   private

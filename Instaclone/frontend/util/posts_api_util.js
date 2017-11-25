@@ -12,6 +12,13 @@ export const fetchPost = (id) => (
   })
 );
 
+export const fetchUserPosts = (userId) => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/users/${userId}/posts`
+  })
+);
+
 export const createPost = (post) => (
   $.ajax({
     method: 'POST',

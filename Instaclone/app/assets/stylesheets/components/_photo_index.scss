@@ -1,0 +1,31 @@
+.post {
+  width: 550px;
+  border: $lighter-gray 0.5px solid;
+  background-color: white;
+  font-family: $roboto;
+  margin: 0 auto;
+  margin-top: 60px;
+  border-radius: 3px;
+}
+
+.post:last-child {
+  margin-bottom: 60px;
+}
+
+.post-item-top {
+  height: 60px;
+}
+.post-item-top-text {
+  padding: 10px;
+}
+
+.post-author {
+  font-weight: 600;
+  font-size: 16px;
+  padding-left: 5px;
+}
+ .post-location {
+  // font-weight: 600;
+  font-size: 13px;
+  padding-left: 5px;
+ }

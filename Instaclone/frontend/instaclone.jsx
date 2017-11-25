@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { login, signup, logout } from './actions/session_actions';
 import configureStore from './store/store';
 import Root from './components/root';
-import { fetchPosts } from './actions/posts_actions';
+import { fetchPosts, fetchUserPosts } from './actions/posts_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.signup = signup;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchPosts = () => dispatch(fetchPosts());
+  window.fetchPosts = fetchPosts;
+  window.fetchUserPosts = fetchUserPosts;
   ReactDOM.render(<Root store={ store }/>, root);
 
 });

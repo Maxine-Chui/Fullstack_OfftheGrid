@@ -8,6 +8,9 @@ import {
 } from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
+import PostIndexContainer from './posts/post_index_container';
+import ProfilePostIndexContainer from './profile/profile_post_index_container';
+
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -19,7 +22,9 @@ const App = () => (
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
     <AuthRoute path="/" component={SessionFormContainer}/>
+    <ProtectedRoute path="/posts" component={PostIndexContainer}/>
 
+    <Route path="/users/:userId" component={ProfilePostIndexContainer}/>
   </div>
 );
 
