@@ -1,18 +1,21 @@
 .profile-grid {
   width: 935px;
   margin: 0 auto;
-  margin-top: 250px;
+  margin-top: 390px;
 }
 
 .profile-grid-item {
-  width: 293px;
-  height: 293px;
+  width: 290px;
+  height: 290px;
   overflow: hidden;
   display: inline-block;
+  margin-bottom: 25px;
 }
 
 .profile-grid-item img {
   float: left;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .profile-grid-item:nth-child(3n+2) {

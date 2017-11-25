@@ -14,7 +14,7 @@ class PostIndex extends React.Component {
   render() {
     return(
       <div>
-        <ul>
+        <ul className="post-feed">
           {
             this.props.posts.map(post => (
               <PostIndexItem

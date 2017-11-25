@@ -29,3 +29,13 @@ post5 = Post.create(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar
   location: "Higher than you", caption: "Getting high", author_id: user3.id)
 post6 = Post.create(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464281/jennifer-pallian-173715_uoq6n3.jpg",
   author_id: user4.id)
+post7 = Post.create(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1511579792/atle-mo-209964_th4thi.jpg",
+    location: "Dark Forest", caption: "So much wood", author_id: user1.id)
+post8 = Post.create(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1511579794/brooke-lark-158019_l3wuer.jpg",
+  location: "Hipster cafe", caption: "Fake food", author_id: user1.id)
+post9 = Post.create(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_4:3,c_crop/v1511579797/kevin-chen-330761_vd4kho.jpg",
+    location: "Yosemite", caption: "Where I wanna be", author_id: user1.id)
+post10 = Post.create(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_4:3,c_crop/v1511579792/joshua-reddekopp-217223_blv6v2.jpg",
+    location: "Heaven", caption: "Pow pow pow", author_id: user1.id)
+post11 = Post.create(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511579792/stephen-leonardi-369720_shdc8s.jpg",
+    location: "Firefalls", caption: "You wish you saw this", author_id: user1.id)
