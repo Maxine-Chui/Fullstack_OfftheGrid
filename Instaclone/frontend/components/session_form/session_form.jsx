@@ -9,15 +9,16 @@ class SessionForm extends React.Component {
       password: '',
       email: ''
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
     this.logInDemoUser = this.logInDemoUser.bind(this);
+    this.logInUser = this.logInUser.bind(this);
+    this.signUpUser = this.signUpUser.bind(this);
   }
 
-  handleSubmit(e){
-    e.preventDefault();
-    const user = this.state;
-    this.props.processForm(user);
-  }
+  // handleSubmit(e){
+  //   e.preventDefault();
+  //   const user = this.state;
+  // }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn){
@@ -65,6 +66,25 @@ class SessionForm extends React.Component {
     this.props.login(demoUser);
   }
 
+  logInUser(e) {
+    e.preventDefault();
+    const user = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+    this.props.login(user);
+  }
+
+  signUpUser(e) {
+    e.preventDefault();
+    const user = {
+      username: this.state.username,
+      password: this.state.password,
+      email: this.state.email
+    };
+    this.props.signup(user);
+  }
+
   signUpForm() {
     return (
       <div className="login-page-container">
@@ -73,7 +93,7 @@ class SessionForm extends React.Component {
           <div className="login-form-subcontainer">
             <div className="login-form-logo">Shinstagram</div>
             <div className="login-form-blurb">Sign up to see photos and videos from your friends.</div>
-            <form onSubmit={this.handleSubmit}>
+            <div>
               <button type="blah" className="login-form-button" onClick={this.logInDemoUser}>Log in Demo User</button>
               <div className="login-form-or"><span>OR</span></div>
               <div className="login-form">
@@ -105,13 +125,13 @@ class SessionForm extends React.Component {
                     />
                 </label>
                 <br/>
-                <input className="login-form-button" type="submit" value="Sign Up"/>
-              </div>
+                <button className="login-form-button" onClick={this.signUpUser}>Sign Up</button>
+            </div>
               <div className="login-form-errors">{this.renderErrors()}</div>
 
               <div className="login-terms">By signing up, you agree to our Terms & Privacy Policy</div>
 
-            </form>
+            </div>
           </div>
           <div className="login-form-secondary">Have an account? &nbsp;
             <span className="login-form-alt-link">{this.navLink()}</span>
@@ -128,7 +148,7 @@ class SessionForm extends React.Component {
         <div className="login-form-container">
           <div className="login-form-subcontainer">
             <div className="login-form-logo">Shinstagram</div>
-            <form onSubmit={this.handleSubmit}>
+            <div>
               <button type="blah" className="login-form-button" onClick={this.logInDemoUser}>Log in Demo User</button>
 
               <div className="login-form">
@@ -151,10 +171,10 @@ class SessionForm extends React.Component {
                     />
                 </label>
                 <br/>
-                <input className="login-form-button" type="submit" value="Log In"/>
+                <button className="login-form-button" onClick={this.logInUser}>Log In</button>
               </div>
               <div className="login-form-errors">{this.renderErrors()}</div>
-            </form>
+            </div>
           </div>
           <div className="login-form-secondary">Don't have an account? &nbsp;
             <span className="login-form-alt-link">{this.navLink()}</span>

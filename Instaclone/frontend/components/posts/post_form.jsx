@@ -66,7 +66,7 @@ class PostForm extends React.Component {
           </Dropzone>
         </div>
 
-        <div>
+        <div className="post-form-input-container">
           <label>
             <input type="text"
               placeholder="Caption"
