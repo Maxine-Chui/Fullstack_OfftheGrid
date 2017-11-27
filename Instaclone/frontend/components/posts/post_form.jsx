@@ -3,8 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 
-const CLOUDINARY_UPLOAD_PRESET = 'your_upload_preset_id';
-const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/your_cloudinary_app_name/upload';
+const CLOUDINARY_UPLOAD_PRESET = 'muw9bwfy';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dqhhpt0sj/image/upload';
 
 class PostForm extends React.Component {
   constructor(props){
@@ -14,6 +14,12 @@ class PostForm extends React.Component {
       caption: '',
       location: ''
     };
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    const post = this.state;
+    this.props.createPost(post);
   }
 
   onImageDrop(files) {
@@ -42,12 +48,16 @@ class PostForm extends React.Component {
     });
   }
 
-
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
 
   render() {
     return(
-      <form className="post-form">
-        <div >
+      <form className="post-form" onSubmit={this.handleSubmit}>
+        <div>
           <Dropzone className="file-upload-box"
             multiple={false}
             accept="image/*"
@@ -57,15 +67,61 @@ class PostForm extends React.Component {
         </div>
 
         <div>
+          <label>
+            <input type="text"
+              placeholder="Caption"
+              value={this.state.caption}
+              onChange={this.update('caption')}
+              className="post-form-input"
+              />
+          </label>
+          <label>
+            <input type="text"
+              placeholder="Location"
+              value={this.state.location}
+              onChange={this.update('location')}
+              className="post-form-input"
+              />
+          </label>
+        </div>
+
+        <div>
           {this.state.uploadedFileCloudinaryUrl === '' ? null :
           <div>
             <p>{this.state.uploadedFile.name}</p>
             <img src={this.state.uploadedFileCloudinaryUrl} />
           </div>}
         </div>
+
+        <input className="create-post-button" type="submit" value="Share"/>
+
     </form>
     );
   }
+  // render() {
+  //   return(
+  //     <form>
+  //       <div className="post-form">
+  //         <Dropzone className="file-upload-box"
+  //           multiple={false}
+  //           accept="image/*"
+  //           onDrop={this.onImageDrop.bind(this)}>
+  //           <p>Drop an image or click to select a file to upload.</p>
+  //         </Dropzone>
+  //       </div>
+  //
+  //       <div>
+  //         {this.state.uploadedFileCloudinaryUrl === '' ? null :
+  //         <div>
+  //           <p>{this.state.uploadedFile.name}</p>
+  //           <img src={this.state.uploadedFileCloudinaryUrl} />
+  //         </div>}
+  //       </div>
+  //
+  //
+  //   </form>
+  //   );
+  // }
 }
 
 export default PostForm;
