@@ -12,6 +12,7 @@ import PostIndexContainer from './posts/post_index_container';
 import ProfilePostIndexContainer from './profile/profile_post_index_container';
 import UserInfoContainer from './profile/user_info_container';
 // import ProfilePage from './profile/profile_page';
+import PostFormContainer from './posts/post_form_container';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -25,11 +26,12 @@ const App = () => (
     <AuthRoute exact path="/signup" component={SessionFormContainer} />
     <AuthRoute exact path="/" component={SessionFormContainer}/>
   </Switch>
+
     <ProtectedRoute path="/posts" component={PostIndexContainer}/>
 
+    <Route path="/upload" component={PostFormContainer}/>
     <Route path="/users/:userId" component={UserInfoContainer}/>
     <Route path="/users/:userId" component={ProfilePostIndexContainer}/>
-
   </div>
 );
 // <Route path="/users/:userId" component={ProfilePage}/>

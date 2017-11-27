@@ -27,7 +27,7 @@ const personalGreeting = (currentUser, logout) => {
           </label>
         </div>
         <div className="nav-button-group">
-          <span><i className="fa fa-plus" aria-hidden="true"></i></span>
+          <Link to={"/upload"}><span><i className="fa fa-plus" aria-hidden="true"></i></span></Link>
           <Link to={`/users/${currentUser.id}`}><span><i className="fa fa-user-o" aria-hidden="true"></i></span></Link>
           <span><i className="fa fa-sign-out" onClick={logout} aria-hidden="true"></i></span>
         </div>

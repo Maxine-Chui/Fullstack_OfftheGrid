@@ -1,0 +1,19 @@
+.post-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.file-upload-box {
+  height: 300px;
+  width: 500px;
+  border: 2px solid $lighter-gray;
+  border-radius: 2px;
+  font-family: $roboto;
+  color: $gray;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: dashed;
+}
