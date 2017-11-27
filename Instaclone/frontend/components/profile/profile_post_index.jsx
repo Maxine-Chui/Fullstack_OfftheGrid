@@ -11,6 +11,10 @@ class ProfilePostIndex extends React.Component {
     this.props.fetchUserPosts(this.props.match.params.userId);
   }
 
+  // componentWillUnmount(){
+  //   this.props.clearPosts();
+  // }
+
   render() {
     return(
       <ul className="profile-grid">

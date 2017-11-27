@@ -3,7 +3,8 @@ import {
   fetchPost,
   createPost,
   deletePost,
-  fetchUserPosts
+  fetchUserPosts,
+  clearPosts
 } from '../../actions/posts_actions';
 import ProfilePostIndex from './profile_post_index';
 
@@ -15,7 +16,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId))
+    fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId)),
+    // clearPosts: () => dispatch(clearPosts())
   };
 };
 

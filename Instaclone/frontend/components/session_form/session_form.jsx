@@ -55,15 +55,14 @@ class SessionForm extends React.Component {
     }
   }
 
+
   logInDemoUser(e) {
     e.preventDefault();
-    this.state = {
+    const demoUser = {
       username: 'user1',
       password: 'useruser1',
-      email: 'user1@user1.com'
     };
-    const user = this.state;
-    this.props.login(user);
+    this.props.login(demoUser);
   }
 
   signUpForm() {
@@ -75,7 +74,7 @@ class SessionForm extends React.Component {
             <div className="login-form-logo">Shinstagram</div>
             <div className="login-form-blurb">Sign up to see photos and videos from your friends.</div>
             <form onSubmit={this.handleSubmit}>
-              <button className="login-form-button" onClick={this.logInDemoUser}>Log in Demo User</button>
+              <button type="blah" className="login-form-button" onClick={this.logInDemoUser}>Log in Demo User</button>
               <div className="login-form-or"><span>OR</span></div>
               <div className="login-form">
                 <br/>
@@ -130,7 +129,7 @@ class SessionForm extends React.Component {
           <div className="login-form-subcontainer">
             <div className="login-form-logo">Shinstagram</div>
             <form onSubmit={this.handleSubmit}>
-              <button className="login-form-button" onClick={this.logInDemoUser}>Log in Demo User</button>
+              <button type="blah" className="login-form-button" onClick={this.logInDemoUser}>Log in Demo User</button>
 
               <div className="login-form">
                 <br/>
@@ -152,7 +151,7 @@ class SessionForm extends React.Component {
                     />
                 </label>
                 <br/>
-                <input className="login-form-button" type="submit" value="Log In" />
+                <input className="login-form-button" type="submit" value="Log In"/>
               </div>
               <div className="login-form-errors">{this.renderErrors()}</div>
             </form>

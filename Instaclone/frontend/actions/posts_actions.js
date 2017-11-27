@@ -21,6 +21,9 @@ export const removePost = postId => ({
   postId
 });
 
+export const clearPosts = () => dispatch => (
+  dispatch(receivePosts({}))
+);
 
 export const fetchPosts = () => dispatch => (
   APIPostsUtil.fetchPosts().then(posts => dispatch(receivePosts(posts)))
