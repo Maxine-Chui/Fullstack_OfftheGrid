@@ -45,6 +45,15 @@ export const deletePost = postId => dispatch => (
   APIPostsUtil.deletePost(postId).then(post => dispatch(removePost(postId)))
 );
 
+export const createLike = postId => dispatch => (
+  APIPostsUtil.createLike(postId).then(post => dispatch(receivePost(post)))
+);
+
+export const deleteLike = postId => dispatch => (
+  APIPostsUtil.deleteLike(postId).then(post => dispatch(receivePost(post)))
+);
+
+
 // export const receiveErrors = errors => ({
 //   type: RECEIVE_POSTS_ERRORS,
 //   errors

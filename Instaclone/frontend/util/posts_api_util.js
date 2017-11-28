@@ -33,3 +33,18 @@ export const deletePost = (id) => (
     url: `/api/posts/${id}`,
   })
 );
+
+export const createLike = postId => (
+  $.ajax({
+    method: 'POST',
+    url: `/api/posts/${postId}/likes`,
+    data: { postId }
+  })
+);
+
+export const deleteLike = postId => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/posts/${postId}/likes`
+  })
+);
