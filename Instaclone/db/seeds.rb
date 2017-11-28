@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create!([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create!(name: 'Luke', movie: movies.first)
+User.destroy_all
+Post.destroy_all
+Like.destroy_all
 
 #Users
 user1 = User.create!(username:"user1", password: "useruser1", email: "user1@user1.com",
@@ -49,10 +52,10 @@ post15 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/
     location: "In a crevasse", caption: "Burrrr", author_id: user3.id)
 
 #Likes
-like1 = Like.create!(post_id: 1, user_id: 2)
-like2 = Like.create!(post_id: 1, user_id: 3)
-like3 = Like.create!(post_id: 2, user_id: 2)
-like4 = Like.create!(post_id: 3, user_id: 1)
-like5 = Like.create!(post_id: 3, user_id: 3)
-like6 = Like.create!(post_id: 4, user_id: 1)
-like7 = Like.create!(post_id: 5, user_id: 1)
+like1 = Like.create!(post_id: post1.id, user_id: user2.id)
+like2 = Like.create!(post_id: post1.id, user_id: user3.id)
+like3 = Like.create!(post_id: post2.id, user_id: user2.id)
+like4 = Like.create!(post_id: post3.id, user_id: user1.id)
+like5 = Like.create!(post_id: post3.id, user_id: user3.id)
+like6 = Like.create!(post_id: post4.id, user_id: user1.id)
+like7 = Like.create!(post_id: post5.id, user_id: user1.id)
