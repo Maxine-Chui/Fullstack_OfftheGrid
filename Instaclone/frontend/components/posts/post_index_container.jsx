@@ -6,12 +6,14 @@ import {
   deletePost,
   fetchUserPosts
 } from '../../actions/posts_actions';
+// import selectAllPosts from '../../reducers/selectors';
 
 import PostIndex from './post_index';
 
 const mapStateToProps = (state) => {
   return {
     posts: Object.values(state.entities.posts)
+    // posts: selectAllPosts(state)
     // .map(id => state.posts[id])
   };
 };

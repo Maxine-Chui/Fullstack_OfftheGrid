@@ -8,9 +8,9 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, { history }) => {
   return {
-    createPost: (post) => dispatch(createPost(post))
+    createPost: (post) => dispatch(createPost(post)).then(() => history.push('/posts'))
   };
 };
 

@@ -19,7 +19,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
   <div>
     <header>
-      <GreetingContainer />
+      <Route path="/" component={GreetingContainer} />
     </header>
   <Switch>
     <AuthRoute exact path="/login" component={SessionFormContainer} />
@@ -29,7 +29,7 @@ const App = () => (
 
     <ProtectedRoute path="/posts" component={PostIndexContainer}/>
 
-    <Route path="/upload" component={PostFormContainer}/>
+    <ProtectedRoute path="/upload" component={PostFormContainer}/>
     <Route path="/users/:userId" component={UserInfoContainer}/>
     <Route path="/users/:userId" component={ProfilePostIndexContainer}/>
   </div>

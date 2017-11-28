@@ -8,8 +8,8 @@ const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser
 });
 
-const mapDispatchToProps = (dispatch, { location, history }) => ({
-  logout: () => dispatch(logout()).then(dispatch(clearPosts()).then(() => history.push('/login')))
+const mapDispatchToProps = (dispatch, { history }) => ({
+  logout: () => dispatch(logout()).then(() => history.push('/login'))
 });
 
 export default connect(

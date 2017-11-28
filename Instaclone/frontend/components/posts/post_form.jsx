@@ -10,15 +10,23 @@ class PostForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      uploadedFileCloudinaryUrl: '',
+      img_url: '',
       caption: '',
-      location: ''
+      location: '',
+      // author_id: props.currentUser.id
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleImageUpload = this.handleImageUpload.bind(this);
   }
 
   handleSubmit(e){
     e.preventDefault();
-    const post = this.state;
+    const post = {
+      img_url: this.state.img_url,
+      caption: this.state.caption,
+      location: this.state.location,
+      // author_id: this.props.currentUser.id
+    };
     this.props.createPost(post);
   }
 
@@ -39,10 +47,9 @@ class PostForm extends React.Component {
       if (err) {
         console.error(err);
       }
-
       if (response.body.secure_url !== '') {
         this.setState({
-          uploadedFileCloudinaryUrl: response.body.secure_url
+          img_url: response.body.secure_url
         });
       }
     });
@@ -56,7 +63,7 @@ class PostForm extends React.Component {
 
   render() {
     return(
-      <form className="post-form" onSubmit={this.handleSubmit}>
+      <div className="post-form" >
         <div>
           <Dropzone className="file-upload-box"
             multiple={false}
@@ -85,43 +92,20 @@ class PostForm extends React.Component {
           </label>
         </div>
 
-        <div>
-          {this.state.uploadedFileCloudinaryUrl === '' ? null :
+        <div className="uploaded-photo">
+          {this.state.img_url === '' ? null :
           <div>
             <p>{this.state.uploadedFile.name}</p>
-            <img src={this.state.uploadedFileCloudinaryUrl} />
+            <img src={this.state.img_url} />
           </div>}
         </div>
 
-        <input className="create-post-button" type="submit" value="Share"/>
+        <button className="create-post-button" onClick={this.handleSubmit}>Share</button>
 
-    </form>
+    </div>
     );
   }
-  // render() {
-  //   return(
-  //     <form>
-  //       <div className="post-form">
-  //         <Dropzone className="file-upload-box"
-  //           multiple={false}
-  //           accept="image/*"
-  //           onDrop={this.onImageDrop.bind(this)}>
-  //           <p>Drop an image or click to select a file to upload.</p>
-  //         </Dropzone>
-  //       </div>
-  //
-  //       <div>
-  //         {this.state.uploadedFileCloudinaryUrl === '' ? null :
-  //         <div>
-  //           <p>{this.state.uploadedFile.name}</p>
-  //           <img src={this.state.uploadedFileCloudinaryUrl} />
-  //         </div>}
-  //       </div>
-  //
-  //
-  //   </form>
-  //   );
-  // }
+
 }
 
 export default PostForm;

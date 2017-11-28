@@ -19,6 +19,8 @@
   float: left;
   min-width: 100%;
   min-height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .profile-grid-item:nth-child(3n+2) {

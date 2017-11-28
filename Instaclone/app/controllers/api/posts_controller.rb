@@ -21,7 +21,7 @@ class Api::PostsController < ApplicationController
     if params[:user_id]
       @posts = User.find(params[:user_id]).posts
     else
-      @posts = Post.all
+      @posts = Post.all.order!('created_at DESC')
     end
   end
 
