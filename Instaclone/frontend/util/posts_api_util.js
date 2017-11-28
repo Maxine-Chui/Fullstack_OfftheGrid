@@ -38,7 +38,7 @@ export const createLike = postId => (
   $.ajax({
     method: 'POST',
     url: `/api/posts/${postId}/likes`,
-    data: { postId }
+    data: { post_id: postId }
   })
 );
 
