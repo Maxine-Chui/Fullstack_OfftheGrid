@@ -25,6 +25,11 @@ class Api::PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+    render 'api/posts/show'
+  end
+
   private
   def post_params
     params.require(:post).permit(:img_url, :location, :caption)

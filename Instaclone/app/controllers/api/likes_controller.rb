@@ -5,12 +5,10 @@ class Api::LikesController < ApplicationController
     @like.user_id = current_user.id
     @like.post_id = params[:post_id]
     if @like.save
-      # puts('i am saving')
       @post = @like.post
-      puts(@like.post.location)
+      # puts(@like.post.location)
       render 'api/posts/show'
     else
-      # puts('i am not saving')
       render json: @like.errors.full_messages, status: 422
     end
   end

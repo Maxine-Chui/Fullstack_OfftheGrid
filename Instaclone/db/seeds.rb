@@ -8,6 +8,7 @@
 User.destroy_all
 Post.destroy_all
 Like.destroy_all
+Comment.destroy_all
 
 #Users
 user1 = User.create!(username:"user1", password: "useruser1", email: "user1@user1.com",
@@ -59,3 +60,13 @@ like4 = Like.create!(post_id: post3.id, user_id: user1.id)
 like5 = Like.create!(post_id: post3.id, user_id: user3.id)
 like6 = Like.create!(post_id: post4.id, user_id: user1.id)
 like7 = Like.create!(post_id: post5.id, user_id: user1.id)
+
+#Comments
+comment1 = Comment.create!(body: "Amazing shot!", post_id: post3.id, author_id: user1.id)
+comment2 = Comment.create!(body: "Put this in my belly", post_id: post4.id, author_id: user1.id)
+comment3 = Comment.create!(body: "This is sickkk", post_id: post5.id, author_id: user1.id)
+comment4 = Comment.create!(body: "Trad is rad", post_id: post13.id, author_id: user1.id)
+comment5 = Comment.create!(body: "Beast mode!!", post_id: post1.id, author_id: user2.id)
+comment6 = Comment.create!(body: "Gnarly!", post_id: post2.id, author_id: user2.id)
+comment7 = Comment.create!(body: "Can I be you", post_id: post1.id, author_id: user3.id)
+comment8 = Comment.create!(body: "Dude you're ripped", post_id: post1.id, author_id: user4.id)

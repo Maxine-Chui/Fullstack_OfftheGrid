@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   const currentUserId = state.session.currentUser.id;
   return {
     numLikes: ownProps.post.likes,
-    liked: Boolean(ownProps.post.liked_by_current_user),
+    liked: ownProps.post.liked_by_current_user,
     postId: ownProps.post.id
   };
 };
