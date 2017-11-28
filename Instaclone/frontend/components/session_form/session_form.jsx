@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
         <img id="login-img" src="http://res.cloudinary.com/dqhhpt0sj/image/upload/v1511399842/Screen_Shot_2017-11-22_at_5.04.43_PM_copy_ciucwb.png"/>
         <div className="login-form-container">
           <div className="login-form-subcontainer">
-            <div className="login-form-logo">Shinstagram</div>
+            <div className="login-form-logo">OfftheGrid</div>
             <div className="login-form-blurb">Sign up to see photos and videos from your friends.</div>
             <div>
               <button type="blah" className="login-form-button" onClick={this.logInDemoUser}>Log in Demo User</button>
@@ -147,7 +147,7 @@ class SessionForm extends React.Component {
         <img id="login-img" src="http://res.cloudinary.com/dqhhpt0sj/image/upload/v1511399842/Screen_Shot_2017-11-22_at_5.04.43_PM_copy_ciucwb.png"/>
         <div className="login-form-container">
           <div className="login-form-subcontainer">
-            <div className="login-form-logo">Shinstagram</div>
+            <div className="login-form-logo">OfftheGrid</div>
             <div>
               <button type="blah" className="login-form-button" onClick={this.logInDemoUser}>Log in Demo User</button>
 

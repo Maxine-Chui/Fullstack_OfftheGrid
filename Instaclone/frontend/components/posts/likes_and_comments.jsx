@@ -24,7 +24,7 @@ class LikesAndComments extends React.Component {
 
   toggleLike(e) {
     e.preventDefault();
-    console.log(this.props.postId);
+    // console.log(this.props.postId);
     if (this.props.liked) {
       this.props.deleteLike(this.props.postId);
     } else {
@@ -35,6 +35,8 @@ class LikesAndComments extends React.Component {
   likes(){
     if (this.props.numLikes > 1) {
       return `${this.props.numLikes} likes`;
+    } else if (this.props.numLikes === 0) {
+      return '';
     } else {
       return `${this.props.numLikes} like`;
     }
@@ -53,5 +55,5 @@ class LikesAndComments extends React.Component {
     );
   }
 }
-
+// <div className="like-icon"><i className="fa fa-heart-o" onClick={this.toggleLike} aria-hidden="true"></i></div>
 export default LikesAndComments;

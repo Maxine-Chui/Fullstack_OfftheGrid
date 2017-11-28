@@ -15,7 +15,7 @@ const personalGreeting = (currentUser, logout) => {
       <div className="nav-logos">
         <div className="nav-logo-group">
           <Link to="/posts"><div className="logo"><i className="fa fa-instagram" aria-hidden="true"></i></div></Link>
-          <Link to="/posts"><div id="nav-name">Shinstagram</div></Link>
+          <Link to="/posts"><div id="nav-name">OfftheGrid</div></Link>
         </div>
         <div className="nav-search-bar">
           <div className="search-logo"><i className="fa fa-search"></i></div>

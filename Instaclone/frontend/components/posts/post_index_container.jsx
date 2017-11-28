@@ -23,8 +23,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
-    createLike: () => dispatch(createLike()),
-    deleteLike: () => dispatch(deleteLike())
     // fetchUserPosts: () => dispatch(fetchUserPosts())
   };
 };

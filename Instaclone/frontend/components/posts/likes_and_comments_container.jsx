@@ -6,7 +6,6 @@ import {
 import LikesAndComments  from './likes_and_comments';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('MSP PROPS',ownProps);
   const currentUserId = state.session.currentUser.id;
   return {
     numLikes: ownProps.post.likes,
