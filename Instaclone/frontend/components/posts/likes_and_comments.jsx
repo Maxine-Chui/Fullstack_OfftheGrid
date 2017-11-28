@@ -31,8 +31,8 @@ class LikesAndComments extends React.Component {
     console.log(nextProps);
     if (this.props.numLikes !== nextProps.numLikes){
       this.setState({
-        liked: this.props.liked,
-        numLikes: this.props.numLikes
+        liked: nextProps.liked,
+        numLikes: nextProps.numLikes
       });
     }
   }

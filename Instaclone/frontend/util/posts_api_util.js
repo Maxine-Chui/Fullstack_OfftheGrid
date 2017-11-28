@@ -48,3 +48,18 @@ export const deleteLike = postId => (
     url: `/api/posts/${postId}/likes`
   })
 );
+
+export const createComment = (postId, comment) => (
+  $.ajax({
+    method: 'POST',
+    url: `/api/comments`,
+    data: { post_id: postId, comment }
+  })
+);
+
+export const deleteComment = postId => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/posts/${postId}/comments`
+  })
+);

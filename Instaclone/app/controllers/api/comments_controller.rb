@@ -1,5 +1,4 @@
-class CommentsController < ApplicationController
-
+class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.author_id = current_user.id
@@ -13,7 +12,16 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.find_by(post_id: params[:post_id])
-    render 'api/posts/show'
+    @post = @comment.post
+    render 'api/comments/show'
+  end
+
+  def index
+    if params[:post_id]
+      @comments = Comment.where({post_id: params[:post_id]})
+      # puts @comments
+      render '/api/comments/index'
+    end
   end
 
   def update
