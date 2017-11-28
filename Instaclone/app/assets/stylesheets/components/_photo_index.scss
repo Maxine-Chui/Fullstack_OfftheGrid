@@ -21,15 +21,48 @@
 }
 .post-item-top-text {
   padding: 10px;
+  display: flex;
+}
+
+.author-profile-photo{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+.author-and-location{
+  flex-direction: column;
 }
 
 .post-author {
   font-weight: 600;
   font-size: 16px;
-  padding-left: 5px;
+  padding-left: 15px;
 }
  .post-location {
   // font-weight: 600;
   font-size: 13px;
-  padding-left: 5px;
+  padding-left: 15px;
+ }
+
+ .post-action-icons{
+   font-size: 24px;
+   display: flex;
+   flex-direction: row;
+   // margin-top: 2px;
+ }
+
+ .like-icon {
+   margin-left: 15px;
+   margin-top: 2px;
+ }
+
+ .comment-icon {
+   margin-left: 15px;
+ }
+
+ .bookmark-icon {
+   margin-left: 430px;
+   margin-top: 2px;
  }

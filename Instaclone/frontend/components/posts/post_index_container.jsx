@@ -4,7 +4,9 @@ import {
   fetchPost,
   createPost,
   deletePost,
-  fetchUserPosts
+  fetchUserPosts,
+  createLike,
+  deleteLike
 } from '../../actions/posts_actions';
 // import selectAllPosts from '../../reducers/selectors';
 
@@ -21,7 +23,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
-    fetchUserPosts: () => dispatch(fetchUserPosts())
+    createLike: () => dispatch(createLike()),
+    deleteLike: () => dispatch(deleteLike())
+    // fetchUserPosts: () => dispatch(fetchUserPosts())
   };
 };
 
