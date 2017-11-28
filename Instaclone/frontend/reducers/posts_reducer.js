@@ -7,12 +7,15 @@ const postsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_POSTS:
+    console.log('i am receive posts');
       return merge({}, action.posts);
     case RECEIVE_POST:
+    console.log('i am receive post');
       return merge({}, state, {[action.post.id]: action.post});
     case REMOVE_POST:
+    console.log('i am remove post');
       let newState = merge({}, state);
-      delete newState[action.post.id];
+      delete newState[action.postId];
       return newState;
     default:
       return state;

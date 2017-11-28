@@ -56,13 +56,21 @@
  .like-icon {
    margin-left: 15px;
    margin-top: 2px;
+   cursor: pointer;
  }
 
  .comment-icon {
    margin-left: 15px;
+   cursor: pointer;
  }
 
  .bookmark-icon {
    margin-left: 430px;
    margin-top: 2px;
+   cursor: pointer;
+ }
+
+ .num-likes {
+  margin-left: 20px;
+  font-family: $roboto;
  }

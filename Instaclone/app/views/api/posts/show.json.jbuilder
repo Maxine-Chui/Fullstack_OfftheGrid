@@ -1,4 +1,5 @@
 json.set! @post.id do
+  json.id @post.id
   json.username @post.user.username
   json.author_id @post.user.id
   json.img_url @post.img_url
