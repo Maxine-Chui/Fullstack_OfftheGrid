@@ -5,18 +5,6 @@ import LikesAndCommentsContainer from './likes_and_comments_container';
 
 class PostIndexItem extends React.Component {
 
-  authorCaption(){
-    if (this.props.post.caption !== null) {
-      return `${this.props.post.username}`;
-    }
-  }
-
-  caption(){
-    if (this.props.post.caption !== null) {
-      return `${this.props.post.caption}`;
-    }
-  }
-
   render() {
     return (
       <li>
@@ -34,10 +22,6 @@ class PostIndexItem extends React.Component {
           <img className="post-photo" src={this.props.post.img_url}/>
 
           <LikesAndCommentsContainer post={ this.props.post }/>
-          <div className="caption-snippet">
-            <span className="caption-author">{this.authorCaption()}</span>
-            <span className="caption-body">{this.caption()}</span>
-          </div>
 
         </div>
       </li>

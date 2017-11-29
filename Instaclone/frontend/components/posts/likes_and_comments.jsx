@@ -1,22 +1,26 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import CommentsItem from './comments_item';
 
 class LikesAndComments extends React.Component {
   constructor(props){
     super(props);
     // this.state = {
-    //   liked: this.props.liked,
-    //   numLikes: this.props.numLikes
+    //   authorId: this.props.currentUser.id,
+    //   username: this.props.currentUser.username,
+    //   body: "",
+    //   postId: this.props.postId
     // };
   this.toggleLike = this.toggleLike.bind(this);
   }
 
-  // componentDidMount(){
+  // componentWillMount(){
   //
   // }
 
   //
-  // componentWillReceiveProps(nextProps) {
+
+  // componentWillUpdate(nextProps, nextState){
   //   console.log(this.props);
   //   console.log(nextProps);
   //   if (this.props.numLikes !== nextProps.numLikes){
@@ -26,14 +30,16 @@ class LikesAndComments extends React.Component {
   //     });
   //   }
   // }
-  componentWillUpdate(nextProps, nextState){
-    console.log(this.props);
-    console.log(nextProps);
-    if (this.props.numLikes !== nextProps.numLikes){
-      this.setState({
-        liked: nextProps.liked,
-        numLikes: nextProps.numLikes
-      });
+
+  authorCaption(){
+    if (this.props.post.caption !== null) {
+      return `${this.props.post.username}`;
+    }
+  }
+
+  caption(){
+    if (this.props.post.caption !== null) {
+      return `${this.props.post.caption}`;
     }
   }
 
@@ -85,6 +91,32 @@ class LikesAndComments extends React.Component {
           <div className="bookmark-icon"><i className="fa fa-bookmark-o" aria-hidden="true"></i></div>
         </div>
         <div className="num-likes">{this.likes()}</div>
+
+        <div className="caption-snippet">
+          <span className="caption-author">{this.authorCaption()}</span>
+          <span className="caption-body">{this.caption()}</span>
+        </div>
+
+        <div className="comments-section">
+          <ul className="comments-items">
+            {
+              this.props.allComments.map(comment => (
+                <CommentsItem
+                  key={comment.id}
+                  comment={ comment }/>
+              ))
+            }
+          </ul>
+          <div className="add-comment">
+            <label>
+              <input type="text"
+                placeholder="Add a comment..."
+                className="add-comment-input"
+                />
+            </label>
+          </div>
+        </div>
+
       </div>
     );
   }

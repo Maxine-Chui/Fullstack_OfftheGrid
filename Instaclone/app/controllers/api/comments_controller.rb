@@ -11,7 +11,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def show
-    @comment = Comment.find_by(post_id: params[:post_id])
+    @comment = Comment.find(params[:id])
     @post = @comment.post
     render 'api/comments/show'
   end
@@ -19,7 +19,6 @@ class Api::CommentsController < ApplicationController
   def index
     if params[:post_id]
       @comments = Comment.where({post_id: params[:post_id]})
-      # puts @comments
       render '/api/comments/index'
     end
   end
@@ -29,9 +28,13 @@ class Api::CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find_by({post_id: params[:post_id], user_id: current_user.id})
-    @post = @comment.post
-    @comment.destroy
-    render 'api/posts/show'
+    if @comment
+      @post = @comment.post
+      @comment.destroy
+      render 'api/posts/show'
+    else
+      render json: @comment.errors.full_messages, status: 424
+    end
   end
 
   private

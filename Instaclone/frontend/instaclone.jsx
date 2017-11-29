@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const root = document.getElementById('root');
   // console.log("in doc ready");
-  window.login = login;
-  window.logout = logout;
-  window.signup = signup;
+  // window.login = login;
+  // window.logout = logout;
+  // window.signup = signup;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchPosts = fetchPosts;
-  window.fetchUserPosts = fetchUserPosts;
+  // window.fetchPosts = fetchPosts;
+  // window.fetchUserPosts = fetchUserPosts;
   ReactDOM.render(<Root store={ store }/>, root);
 
 });

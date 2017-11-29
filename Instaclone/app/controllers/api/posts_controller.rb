@@ -16,8 +16,6 @@ class Api::PostsController < ApplicationController
   end
 
   def index
-    # @user = current_user
-    # @posts = @user.posts
     if params[:user_id]
       @posts = User.find(params[:user_id]).posts
     else
