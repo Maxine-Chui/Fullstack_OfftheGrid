@@ -9,6 +9,14 @@ const postsReducer = (state = {}, action) => {
     case RECEIVE_POSTS:
       return merge({}, action.posts);
     case RECEIVE_POST:
+    // debugger;
+      let test1 = { test: { one: [1, 2, 3]} };
+      let test2 = { test: { one: [1, 2, 3, 4, 5]} };
+      console.log(merge({}, test2, test1));
+
+      // const id = action.post.id;
+      // const oldComments = state[id].comments;
+      // const newComments = action.post[id].comments;
       return merge({}, state, action.post);
     case REMOVE_POST:
       let newState = merge({}, state);

@@ -4,9 +4,10 @@ export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_COMMENT ='REMOVE_COMMENT';
 
-const receiveComments = comments => ({
+const receiveComments = (comments, postId) => ({
   type: RECEIVE_COMMENTS,
-  comments
+  comments,
+  postId
 });
 
 const receiveComment = comment => ({
@@ -20,7 +21,7 @@ const removeComment = commentId => ({
 });
 
 export const fetchPostComments = (postId) => dispatch => (
-  APICommentsUtil.fetchPostComments(postId).then(comments => dispatch(receiveComments(comments)))
+  APICommentsUtil.fetchPostComments(postId).then(comments => dispatch(receiveComments(comments, postId)))
 );
 
 // export const createComment = (postId, comment) => dispatch => (

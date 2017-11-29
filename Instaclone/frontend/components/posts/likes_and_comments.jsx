@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import CommentsItem from './comments_item';
+import { RIEInput } from 'riek';
+import _ from 'lodash';
 
 class LikesAndComments extends React.Component {
   constructor(props){
@@ -11,18 +13,9 @@ class LikesAndComments extends React.Component {
     };
   this.toggleLike = this.toggleLike.bind(this);
   this.addComment = this.addComment.bind(this);
+
   }
-
-  // componentWillMount(){
-  //
-  // }
-
-  // componentDidMount(){
-  //   this.props.fetchPostComments();
-  // }
-
-  //
-
+  
   authorCaption(){
     if (this.props.post.caption !== null) {
       return `${this.props.post.username}`;
@@ -62,23 +55,26 @@ class LikesAndComments extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e => {
+      this.setState({[field]: e.currentTarget.value});
+    };
   }
 
   addComment(e) {
+    if (e.keyCode === 13) {
     e.preventDefault();
     const comment = {
       author: this.props.currentUser.username,
       body: this.state.body
     };
     return this.props.createComment(this.props.postId, comment).then(() => {
-    this.setState({body:''});   
+    this.setState({body:''});
     });
+  }
   }
 
   render(){
+    const { post, currentUser, deleteComment } = this.props;
     return (
       <div>
         <div className="post-action-icons">
@@ -89,7 +85,7 @@ class LikesAndComments extends React.Component {
         <div className="num-likes">{this.likes()}</div>
 
         <div className="comment-snippet">
-          <span className="comment-author">{this.authorCaption()}</span>
+          <Link to={`/users/${post.author_id}`}><span className="comment-author">{this.authorCaption()}</span></Link>
           <span className="comment-body">{this.caption()}</span>
         </div>
 
@@ -99,20 +95,24 @@ class LikesAndComments extends React.Component {
               this.props.allComments.map(comment => (
                 <CommentsItem
                   key={comment.id}
-                  comment={ comment }/>
+                  comment={ comment }
+                  currentUser={ currentUser }
+                  deleteComment={ deleteComment }/>
               ))
             }
           </ul>
           <div className="add-comment">
+
             <label>
-              <input type="text"
+              <input id="add-comment-enter"
+                type="text"
                 placeholder="Add a comment..."
                 value={this.state.body}
                 onChange={this.update('body')}
+                onKeyUp={this.addComment}
                 className="add-comment-input"
                 />
             </label>
-            <button className="comment-button" onClick={this.addComment}>Add Comment</button>
           </div>
         </div>
 
@@ -122,3 +122,13 @@ class LikesAndComments extends React.Component {
 }
 
 export default LikesAndComments;
+// <button className="comment-button" onClick={this.addComment}>Add Comment</button>
+// <RIEInput propName="text"
+//   inputProps={
+//     { placeholder: "Add a comment..."
+//     }
+//   }
+//   value={this.state.body}
+//   onChange={() => this.update('body')}
+//   change={(e) => this.addComment(e)}
+//   />

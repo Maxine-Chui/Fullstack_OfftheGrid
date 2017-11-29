@@ -28,19 +28,21 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find_by({post_id: params[:post_id], user_id: current_user.id})
+    # @comment = Comment.find_by({post_id: params[:post_id], user_id: current_user.id})
+    # debugger
+    @comment = Comment.find(params[:id])
     if @comment
       @post = @comment.post
       @comment.destroy
       render 'api/posts/show'
     else
-      render json: @comment.errors.full_messages, status: 424
+      render json: ['Permission denied: Cannot delete this comment'], status: 422
     end
   end
 
   private
   def comment_params
-    params.require(:comment).permit(:body, :post_id, :author_id)
+    params.require(:comment).permit(:id, :body, :post_id, :author_id)
   end
 
 end

@@ -14,6 +14,7 @@ import {
 import LikesAndComments  from './likes_and_comments';
 
 const mapStateToProps = (state, ownProps) => {
+  // console.log(ownProps.post.comments);
   return {
     numLikes: ownProps.post.likes,
     liked: ownProps.post.liked_by_current_user,
