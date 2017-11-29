@@ -23,10 +23,10 @@ export const fetchPostComments = (postId) => dispatch => (
   APICommentsUtil.fetchPostComments(postId).then(comments => dispatch(receiveComments(comments)))
 );
 
-export const createComment = (postId, comment) => dispatch => (
-  APICommentsUtil.createComment(postId, comment).then(comment => dispatch(receiveComment(comment)))
-);
-
-export const deleteComment = (commentId) => dispatch => (
-  APICommentsUtil.deleteComment(commentId).then(comment => dispatch(removeComment(comment)))
+// export const createComment = (postId, comment) => dispatch => (
+//   APICommentsUtil.createComment(postId, comment).then(comment => dispatch(receiveComment(comment)))
+// );
+//
+// export const deleteComment = (commentId) => dispatch => (
+//   APICommentsUtil.deleteComment(commentId).then(comment => dispatch(removeComment(comment)))
 )

@@ -9,8 +9,6 @@ const postsReducer = (state = {}, action) => {
     case RECEIVE_POSTS:
       return merge({}, action.posts);
     case RECEIVE_POST:
-    // debugger;
-    // console.log('i am receive post');
       return merge({}, state, action.post);
     case REMOVE_POST:
       let newState = merge({}, state);

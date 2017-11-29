@@ -5,31 +5,23 @@ import CommentsItem from './comments_item';
 class LikesAndComments extends React.Component {
   constructor(props){
     super(props);
-    // this.state = {
-    //   authorId: this.props.currentUser.id,
-    //   username: this.props.currentUser.username,
-    //   body: "",
-    //   postId: this.props.postId
-    // };
+    this.state = {
+      author: this.props.currentUser.username,
+      body: ''
+    };
   this.toggleLike = this.toggleLike.bind(this);
+  this.addComment = this.addComment.bind(this);
   }
 
   // componentWillMount(){
   //
   // }
 
-  //
-
-  // componentWillUpdate(nextProps, nextState){
-  //   console.log(this.props);
-  //   console.log(nextProps);
-  //   if (this.props.numLikes !== nextProps.numLikes){
-  //     this.setState({
-  //       liked: nextProps.liked,
-  //       numLikes: nextProps.numLikes
-  //     });
-  //   }
+  // componentDidMount(){
+  //   this.props.fetchPostComments();
   // }
+
+  //
 
   authorCaption(){
     if (this.props.post.caption !== null) {
@@ -45,26 +37,13 @@ class LikesAndComments extends React.Component {
 
   toggleLike(e) {
     e.preventDefault();
-    // console.log(this.props.postId);
     const like = this.props.liked;
-    console.log(like);
     if (like) {
       return this.props.deleteLike(this.props.postId);
     } else {
       return this.props.createLike(this.props.postId);
     }
   }
-
-
-  // like(e){
-  //   e.preventDefault();
-  //   const like = this.props.liked;
-  //   this.props.createLike(this.props.postId);
-  // }
-  //
-  // unlike(){
-  //   return this.props.deleteLike(this.props.postId);
-  // }
 
   toggleLikeButton(){
     const likedButton = <button className="liked"><i className="fa fa-heart" onClick={this.toggleLike} aria-hidden="true"></i></button>;
@@ -82,6 +61,23 @@ class LikesAndComments extends React.Component {
     }
   }
 
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
+  addComment(e) {
+    e.preventDefault();
+    const comment = {
+      author: this.props.currentUser.username,
+      body: this.state.body
+    };
+    return this.props.createComment(this.props.postId, comment).then(() => {
+    this.setState({body:''});   
+    });
+  }
+
   render(){
     return (
       <div>
@@ -92,9 +88,9 @@ class LikesAndComments extends React.Component {
         </div>
         <div className="num-likes">{this.likes()}</div>
 
-        <div className="caption-snippet">
-          <span className="caption-author">{this.authorCaption()}</span>
-          <span className="caption-body">{this.caption()}</span>
+        <div className="comment-snippet">
+          <span className="comment-author">{this.authorCaption()}</span>
+          <span className="comment-body">{this.caption()}</span>
         </div>
 
         <div className="comments-section">
@@ -111,9 +107,12 @@ class LikesAndComments extends React.Component {
             <label>
               <input type="text"
                 placeholder="Add a comment..."
+                value={this.state.body}
+                onChange={this.update('body')}
                 className="add-comment-input"
                 />
             </label>
+            <button className="comment-button" onClick={this.addComment}>Add Comment</button>
           </div>
         </div>
 
@@ -121,5 +120,5 @@ class LikesAndComments extends React.Component {
     );
   }
 }
-// <div className="like-icon"><i className="fa fa-heart-o" onClick={this.toggleLike} aria-hidden="true"></i></div>
+
 export default LikesAndComments;

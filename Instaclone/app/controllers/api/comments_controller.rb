@@ -4,6 +4,7 @@ class Api::CommentsController < ApplicationController
     @comment.author_id = current_user.id
     @comment.post_id = params[:post_id]
     if @comment.save
+      @post = @comment.post
       render 'api/posts/show'
     else
       render json: @comment.errors.full_messages, status: 422

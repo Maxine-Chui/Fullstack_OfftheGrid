@@ -7,8 +7,10 @@ class CommentsItem extends React.Component {
   render() {
     return (
       <li>
-        <div className="commenter-username">this.props.comment.username</div>
-        <div>herrooooo</div>
+        <div className="comment-snippet">
+          <span className="comment-author">{this.props.comment.commenter_name}</span>
+          <span className="comment-body">{this.props.comment.body}</span>
+        </div>
       </li>
     );
   }

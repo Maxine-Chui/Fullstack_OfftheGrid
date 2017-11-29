@@ -77,24 +77,31 @@
 
  .num-likes {
   margin-left: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   margin-top: 5px;
   font-family: $roboto;
   font-size: 14px;
   font-weight: 600;
  }
 
-.caption-snippet {
+.comment-snippet {
   margin-left: 16px;
   font-family: $roboto;
   font-size: 14px;
   margin-bottom: 8px;
 }
 
-.caption-author {
+.comment-author {
   font-weight: 600;
 }
 
-.caption-body {
+.comment-body {
   margin-left: 5px;
+}
+
+.add-comment {
+  margin-left: 10px;
+  font-family: $roboto;
+  font-size: 14px;
+  margin-bottom: 2px;
 }
