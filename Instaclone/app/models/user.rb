@@ -34,6 +34,16 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   class_name: :Comment
 
+  has_many :followees,
+  primary_key: :id,
+  foreign_key: :follower_id,
+  class_name: :Follow
+
+  has_many :followers,
+  primary_key: :id,
+  foreign_key: :followee_id,
+  class_name: :Follow
+
   attr_reader :password
 
   def password=(password)

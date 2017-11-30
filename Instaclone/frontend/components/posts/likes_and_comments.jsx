@@ -82,7 +82,7 @@ class LikesAndComments extends React.Component {
   render(){
     const { post, currentUser, deleteComment } = this.props;
     return (
-      <div>
+      <div className="likes-comments-container">
         <div className="post-action-icons">
           <div className="like-icon">{this.toggleLikeButton()}</div>
           <div className="comment-icon"><i className="fa fa-comment-o" aria-hidden="true"></i></div>
