@@ -5,7 +5,8 @@ class Api::CommentsController < ApplicationController
     @comment.post_id = params[:post_id]
     if @comment.save
       @post = @comment.post
-      render 'api/posts/show'
+      # render 'api/posts/show'
+      render 'api/comments/show'
     else
       render json: @comment.errors.full_messages, status: 422
     end
@@ -21,6 +22,8 @@ class Api::CommentsController < ApplicationController
     if params[:post_id]
       @comments = Comment.where({post_id: params[:post_id]})
       render '/api/comments/index'
+    else
+      @comments = Comment.all
     end
   end
 
@@ -34,7 +37,7 @@ class Api::CommentsController < ApplicationController
     if @comment
       @post = @comment.post
       @comment.destroy
-      render 'api/posts/show'
+      render 'api/comments/show'
     else
       render json: ['Permission denied: Cannot delete this comment'], status: 422
     end

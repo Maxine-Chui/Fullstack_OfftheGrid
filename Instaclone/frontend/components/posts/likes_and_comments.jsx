@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import CommentsItem from './comments_item';
-import { RIEInput } from 'riek';
-import _ from 'lodash';
 
 class LikesAndComments extends React.Component {
   constructor(props){
@@ -13,9 +11,17 @@ class LikesAndComments extends React.Component {
     };
   this.toggleLike = this.toggleLike.bind(this);
   this.addComment = this.addComment.bind(this);
-
+  // debugger;
   }
-  
+  // componentDidMount(){
+  //   this.props.fetchPostComments(this.props.post.id);
+  // }
+
+  // postComments(){
+  //   const comments = this.props.allComments.
+  // }
+
+
   authorCaption(){
     if (this.props.post.caption !== null) {
       return `${this.props.post.username}`;
@@ -92,7 +98,7 @@ class LikesAndComments extends React.Component {
         <div className="comments-section">
           <ul className="comments-items">
             {
-              this.props.allComments.map(comment => (
+              this.props.postComments.map(comment => (
                 <CommentsItem
                   key={comment.id}
                   comment={ comment }
@@ -101,6 +107,7 @@ class LikesAndComments extends React.Component {
               ))
             }
           </ul>
+
           <div className="add-comment">
 
             <label>
@@ -122,13 +129,3 @@ class LikesAndComments extends React.Component {
 }
 
 export default LikesAndComments;
-// <button className="comment-button" onClick={this.addComment}>Add Comment</button>
-// <RIEInput propName="text"
-//   inputProps={
-//     { placeholder: "Add a comment..."
-//     }
-//   }
-//   value={this.state.body}
-//   onChange={() => this.update('body')}
-//   change={(e) => this.addComment(e)}
-//   />

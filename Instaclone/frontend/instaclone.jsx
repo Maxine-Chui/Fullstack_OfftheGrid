@@ -4,6 +4,7 @@ import { login, signup, logout } from './actions/session_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 import { fetchPosts, fetchUserPosts } from './actions/posts_actions';
+import { fetchPostComments, fetchAllComments, createComment, deleteComment } from './actions/comments_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -22,7 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // window.fetchPosts = fetchPosts;
-  // window.fetchUserPosts = fetchUserPosts;
+  window.fetchPostComments = fetchPostComments;
+  window.fetchAllComments = fetchAllComments;
+  window.createComment = createComment;
+  window.deleteComment = deleteComment;
   ReactDOM.render(<Root store={ store }/>, root);
 
 });

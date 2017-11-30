@@ -11,6 +11,7 @@ class PostIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchPosts();
+    this.props.fetchAllComments();
   }
 
   render() {
@@ -21,7 +22,8 @@ class PostIndex extends React.Component {
             this.props.posts.map(post => (
                 <PostIndexItem
                   key={post.id}
-                  post={ post }/>
+                  post={ post }
+                  comments={post.comments}/>
 
             ))
           }

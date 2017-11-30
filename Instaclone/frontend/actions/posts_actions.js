@@ -1,5 +1,5 @@
 import * as APIPostsUtil from '../util/posts_api_util';
-import * as APICommentsUtil from '../util/comments_api_util';
+// import * as APICommentsUtil from '../util/comments_api_util';
 
 
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
@@ -55,13 +55,13 @@ export const deleteLike = postId => dispatch => (
   APIPostsUtil.deleteLike(postId).then(post => dispatch(receivePost(post)))
 );
 
-export const createComment = (postId, comment) => dispatch => (
-  APICommentsUtil.createComment(postId, comment).then(post => dispatch(receivePost(post)))
-);
-
-export const deleteComment = (commentId) => dispatch => (
-  APICommentsUtil.deleteComment(commentId).then(post => dispatch(receivePost(post)))
-);
+// export const createComment = (postId, comment) => dispatch => (
+//   APICommentsUtil.createComment(postId, comment).then(post => dispatch(receivePost(post)))
+// );
+//
+// export const deleteComment = (commentId) => dispatch => (
+//   APICommentsUtil.deleteComment(commentId).then(post => dispatch(receivePost(post)))
+// );
 
 // export const receiveErrors = errors => ({
 //   type: RECEIVE_POSTS_ERRORS,

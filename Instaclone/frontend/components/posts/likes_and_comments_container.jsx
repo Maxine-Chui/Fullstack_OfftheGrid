@@ -2,24 +2,32 @@ import { connect } from 'react-redux';
 import {
   createLike,
   deleteLike,
+  // createComment,
+  // deleteComment
+} from '../../actions/posts_actions';
+import {
+  fetchPostComments,
+  fetchAllComments,
   createComment,
   deleteComment
-} from '../../actions/posts_actions';
-// import {
-//   fetchPostComments,
-//   createComment,
-//   deleteComment
-// } from '../../actions/comments_actions';
+} from '../../actions/comments_actions';
 
 import LikesAndComments  from './likes_and_comments';
 
+
+function postComments(state, postId){
+  let allComments = Object.values(state.entities.comments);
+  return allComments.filter(comment => comment.post_id === postId );
+}
+
 const mapStateToProps = (state, ownProps) => {
-  // console.log(ownProps.post.comments);
   return {
     numLikes: ownProps.post.likes,
     liked: ownProps.post.liked_by_current_user,
     postId: ownProps.post.id,
-    allComments: ownProps.post.comments,
+    // postComments: ownProps.post.comments,
+    postComments: postComments(state, ownProps.post.id),
+    // allComments: state.entities.comments,
     currentUser: state.session.currentUser
   };
 };
@@ -31,6 +39,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     // fetchPostComments: (postId) => dispatch(fetchPostComments(postId)),
     createComment: (postId, comment) => dispatch(createComment(postId, comment)),
     deleteComment: (commentId) => dispatch(deleteComment(commentId))
+    // deleteComment: (commentId) => dispatch(deleteComment(commentId)).then((postId)=> dispatch(fetchPostComments(postId)))
   };
 };
 
