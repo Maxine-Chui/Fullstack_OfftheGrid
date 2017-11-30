@@ -10,6 +10,21 @@ Post.destroy_all
 Like.destroy_all
 Comment.destroy_all
 
+def reset_pk_num
+ model_names = [User, Post, Comment, Like, Follow]
+
+ model_names.each do |model_name|
+   model_name.destroy_all
+ end
+
+ table_names = ["users", "posts", "comments", "likes", "follows"]
+
+ table_names.each do |table_name|
+   ActiveRecord::Base.connection.reset_pk_sequence!(table_name)
+ end
+end
+reset_pk_num
+
 #Users
 user1 = User.create!(username:"user1", password: "useruser1", email: "user1@user1.com",
   img_url:"http://cdn1-www.dogtime.com/assets/uploads/gallery/siberian-husky-dog-breed-pictures/siberian-husky-dog-breed-pictures-3.jpg")
@@ -70,3 +85,11 @@ comment5 = Comment.create!(body: "Beast mode!!", post_id: post1.id, author_id: u
 comment6 = Comment.create!(body: "Gnarly!", post_id: post2.id, author_id: user2.id)
 comment7 = Comment.create!(body: "Can I be you", post_id: post1.id, author_id: user3.id)
 comment8 = Comment.create!(body: "Dude you're ripped", post_id: post1.id, author_id: user4.id)
+
+#Follows
+follow1 = Follow.create!(follower_id: user1.id, followee_id: user2.id)
+follow2 = Follow.create!(follower_id: user1.id, followee_id: user3.id)
+follow3 = Follow.create!(follower_id: user1.id, followee_id: user4.id)
+follow4 = Follow.create!(follower_id: user2.id, followee_id: user1.id)
+follow5 = Follow.create!(follower_id: user2.id, followee_id: user3.id)
+follow6 = Follow.create!(follower_id: user3.id, followee_id: user1.id)

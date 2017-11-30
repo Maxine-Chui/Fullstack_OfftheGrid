@@ -10,7 +10,12 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :create, :update, :destroy, :show]
     resources :users do
       resources :posts, only: [:index]
+      resources :follows, only: [] do
+        get "followers", on: :collection
+        get "followees", on: :collection
+      end
     end
+    resources :follows, only: [:create, :destroy, :show, :index]
   end
   root to: "static_pages#root"
 end
