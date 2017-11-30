@@ -10,6 +10,18 @@
   // margin-top: 30px;
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  font-family: $roboto;
+}
+.profile-section{
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.profile-top-row {
+  display: flex;
+  flex-direction: row;
 }
 
 .profile-img {
@@ -23,8 +35,49 @@
 }
 
 .profile-username {
-  font-family: $roboto;
+  // font-family: $roboto;
   font-size: 28px;
   margin-left: 100px;
   margin-top: 30px;
+}
+
+.follow {
+  width: 125px;
+  height: 18px;
+  border: 1px solid $lighter-gray;
+  padding: 5px;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+.following {
+  background-color: $button-blue;
+  width: 125px;
+  height: 18px;
+  border: 1px solid $lighter-gray;
+  padding: 5px;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 30px;
+  margin-left: 50px;
+  color: white;
+}
+
+.empty-button {
+  border: none;
+  display: none;
+}
+
+.profile-numbers{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 300px;
+  // border: 1px solid $lighter-gray;
+  margin-left: 100px;
 }

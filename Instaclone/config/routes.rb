@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         get "followees", on: :collection
       end
     end
-    resources :follows, only: [:create, :destroy, :show, :index]
+    resource :follows, only: [:create, :destroy, :show, :index]
   end
   root to: "static_pages#root"
 end

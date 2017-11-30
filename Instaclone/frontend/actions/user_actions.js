@@ -1,6 +1,6 @@
 import * as APIUserUtil from '../util/user_api_util';
 
-// import * as APIFollowsUtil from '../util/follows_api_util';
+import * as APIFollowsUtil from '../util/follows_api_util';
 
 export const RECEIVE_USER = 'RECEIVE_USER';
 
@@ -41,10 +41,10 @@ export const fetchUser = (userId) => dispatch => (
 //   APIFollowsUtil.fetchFollowees(userId).then(followees => dispatch(receiveFollowees(followees)))
 // );
 //
-// export const createFollow = (userId, currentUserId) => dispatch => (
-//   APIFollowsUtil.createFollow(userId, currentUserId).then(user => dispatch(receiveUser(user)))
-// );
-//
-// export const deleteFollow = followId => dispatch => (
-//   APIFollowsUtil.deleteFollow(followId).then(user => dispatch(receiveUser(user)))
-// );
+export const createFollow = (userId, currentUserId) => dispatch => (
+  APIFollowsUtil.createFollow(userId, currentUserId).then(user => dispatch(receiveUser(user)))
+);
+
+export const deleteFollow = (userId, currentUserId) => dispatch => (
+  APIFollowsUtil.deleteFollow(userId, currentUserId).then(user => dispatch(receiveUser(user)))
+);
