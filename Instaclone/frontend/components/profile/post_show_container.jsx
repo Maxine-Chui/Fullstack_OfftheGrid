@@ -10,8 +10,7 @@ import {
   deleteComment
 } from '../../actions/comments_actions';
 
-import LikesAndComments  from './likes_and_comments';
-
+import PostShow from './post_show';
 
 function postComments(state, postId){
   let allComments = Object.values(state.entities.comments);
@@ -20,16 +19,17 @@ function postComments(state, postId){
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    currentUser: state.session.currentUser,
     numLikes: ownProps.post.likes,
     liked: ownProps.post.liked_by_current_user,
     postId: ownProps.post.id,
-    postComments: postComments(state, ownProps.post.id),
-    currentUser: state.session.currentUser
+    postComments: postComments(state, ownProps.post.id)
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
+    // fetchPostComments: (postId) => dispatch(fetchPostComments(postId)),
     createLike: (postId) => dispatch(createLike(postId)),
     deleteLike: (postId) => dispatch(deleteLike(postId)),
     createComment: (postId, comment) => dispatch(createComment(postId, comment)),
@@ -40,4 +40,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LikesAndComments);
+)(PostShow);

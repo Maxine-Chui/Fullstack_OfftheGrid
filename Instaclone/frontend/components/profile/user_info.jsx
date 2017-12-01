@@ -12,7 +12,6 @@ class UserInfo extends React.Component {
   }
 
   componentDidMount() {
-    // console.log(this.props);
     this.props.fetchUser(this.props.match.params.userId);
     // this.props.fetchFollowers(this.props.match.params.userId);
     // this.props.fetchFollowees(this.props.match.params.userId);
@@ -21,7 +20,6 @@ class UserInfo extends React.Component {
   toggleFollow(e) {
     e.preventDefault();
     const follow = this.props.followed;
-    console.log(this.props);
     if (follow) {
       return this.props.deleteFollow(this.props.user.id, this.props.currentUser.id);
     } else {
@@ -41,12 +39,12 @@ class UserInfo extends React.Component {
 
   render() {
     return(
-      <div className="profile-grid user-profile-container">
+      <div className="user-profile-container">
         <img className="profile-img" src={this.props.user.img_url}/>
         <div className="profile-section">
           <div className="profile-top-row">
             <div className="profile-username">{this.props.user.username}</div>
-            <div className="follow-button">{this.toggleFollowButton()}</div>
+            <div>{this.toggleFollowButton()}</div>
           </div>
           <div className="profile-numbers">
             <div className="num=posts">{this.props.numPosts}&nbsp;posts</div>

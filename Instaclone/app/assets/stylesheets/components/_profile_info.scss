@@ -1,13 +1,13 @@
-// .user-profile-container {
-  // width: 80%;
-  // margin: 0 auto;
-  // margin-top: 140px;
-  // display: flex;
-  // justify-content: center;
-// }
+.user-profile-container {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 140px;
+  display: flex;
+  justify-content: center;
+}
 
 .user-profile-container {
-  // margin-top: 30px;
+  margin-top: 90px;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -44,17 +44,17 @@
 .follow {
   width: 125px;
   height: 18px;
-  border: 1px solid $lighter-gray;
+  background-color: $button-blue;
   padding: 5px;
   border-radius: 3px;
   text-align: center;
   font-size: 16px;
   margin-top: 30px;
   margin-left: 50px;
+  color: white;
 }
 
 .following {
-  background-color: $button-blue;
   width: 125px;
   height: 18px;
   border: 1px solid $lighter-gray;
@@ -64,7 +64,6 @@
   font-size: 16px;
   margin-top: 30px;
   margin-left: 50px;
-  color: white;
 }
 
 .empty-button {

@@ -6,8 +6,11 @@
     json.author_id post.user.id
     json.author_photo post.user.img_url
     json.likes post.likes.count
-    json.liked_by_current_user !!post.likes.find_by(user_id: current_user.id)
-
+    if logged_in?
+      json.liked_by_current_user !!post.likes.find_by(user_id: current_user.id)
+    else
+      json.liked_by_current_user false
+    end
     json.comments post.comments.map(&:id)
           # json.comment_id comment.id
           # json.commenter_name comment.commenter.username

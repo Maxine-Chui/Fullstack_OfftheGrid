@@ -9,6 +9,7 @@ class ProfilePostIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchUserPosts(this.props.match.params.userId);
+    this.props.fetchAllComments();
   }
 
   // componentWillUnmount(){
@@ -22,7 +23,9 @@ class ProfilePostIndex extends React.Component {
           this.props.posts.map(post => (
             <ProfilePostIndexItem
               key={post.id}
-              post={ post }/>
+              post={ post }
+              comments={post.comments}
+              />
           ))
         }
       </ul>

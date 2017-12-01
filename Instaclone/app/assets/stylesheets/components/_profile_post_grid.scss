@@ -1,18 +1,23 @@
 .profile-grid {
-  width: 935px;
+  width: 980px;
   margin: 0 auto;
-  margin-top: 100px;
-  // display: flex;
-  // justify-content: center;
+  margin-top: 70px;
+  display: flex;
+  column-count: 3;
+  justify-content: left;
   // flex-wrap: wrap;
+  flex-flow: row wrap;
 }
 //
 .profile-grid-item {
   width: 290px;
   height: 290px;
   overflow: hidden;
-  display: inline-block;
+  // display: inline-block;
   margin-bottom: 25px;
+  cursor: pointer;
+  margin-left: 12.5px;
+  margin-right: 12.5px;
 }
 
 .profile-grid-item img {
@@ -23,7 +28,7 @@
   object-position: center;
 }
 
-.profile-grid-item:nth-child(3n+2) {
-  margin-left: 25px;
-  margin-right: 25px;
-}
+// .profile-grid-item:nth-child(3n+2) {
+//   margin-left: 25px;
+//   margin-right: 25px;
+// }

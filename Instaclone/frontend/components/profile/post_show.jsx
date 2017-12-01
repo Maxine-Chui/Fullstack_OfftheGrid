@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import CommentsItem from './comments_item';
+import PostCommentsItem from './post_comments_item';
 
-class LikesAndComments extends React.Component {
+class PostShow extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -12,7 +12,6 @@ class LikesAndComments extends React.Component {
   this.toggleLike = this.toggleLike.bind(this);
   this.addComment = this.addComment.bind(this);
   }
-
 
   authorCaption(){
     if (this.props.post.caption !== null) {
@@ -73,32 +72,36 @@ class LikesAndComments extends React.Component {
 
   render(){
     const { post, currentUser, deleteComment } = this.props;
+
     return (
-      <div className="likes-comments-container">
-        <div className="post-action-icons">
-          <div className="like-icon">{this.toggleLikeButton()}</div>
-          <div className="comment-icon"><i className="fa fa-comment-o" aria-hidden="true"></i></div>
-          <div className="bookmark-icon"><i className="fa fa-bookmark-o" aria-hidden="true"></i></div>
-        </div>
-        <div className="num-likes">{this.likes()}</div>
+      <div>
+        <div className="post-show-photo"><img src={post.img_url}/></div>
+        <div className="post-show-comment-section">
+          <div className="comment-snippet">
+            <Link to={`/users/${post.author_id}`}><span className="comment-author">{this.authorCaption()}</span></Link>
+            <span className="comment-body">{this.caption()}</span>
+          </div>
 
-        <div className="comment-snippet">
-          <Link to={`/users/${post.author_id}`}><span className="comment-author">{this.authorCaption()}</span></Link>
-          <span className="comment-body">{this.caption()}</span>
-        </div>
+          <div>
+            <ul className="comments-items">
+              {
+                this.props.postComments.map(comment => (
+                  <PostCommentsItem
+                    key={comment.id}
+                    comment={ comment }
+                    currentUser={ currentUser }
+                    deleteComment={ deleteComment }/>
+                ))
+              }
+            </ul>
+          </div>
 
-        <div className="comments-section">
-          <ul className="comments-items">
-            {
-              this.props.postComments.map(comment => (
-                <CommentsItem
-                  key={comment.id}
-                  comment={ comment }
-                  currentUser={ currentUser }
-                  deleteComment={ deleteComment }/>
-              ))
-            }
-          </ul>
+          <div className="post-action-icons">
+            <div className="like-icon">{this.toggleLikeButton()}</div>
+            <div className="comment-icon"><i className="fa fa-comment-o" aria-hidden="true"></i></div>
+            <div className="bookmark-icon"><i className="fa fa-bookmark-o" aria-hidden="true"></i></div>
+          </div>
+          <div className="num-likes">{this.likes()}</div>
 
           <div className="add-comment">
 
@@ -114,10 +117,9 @@ class LikesAndComments extends React.Component {
             </label>
           </div>
         </div>
-
       </div>
     );
   }
 }
 
-export default LikesAndComments;
+export default PostShow;

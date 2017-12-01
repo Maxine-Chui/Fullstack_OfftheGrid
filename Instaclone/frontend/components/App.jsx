@@ -30,8 +30,8 @@ const App = () => (
     <ProtectedRoute path="/posts" component={PostIndexContainer}/>
 
     <ProtectedRoute path="/upload" component={PostFormContainer}/>
-    <Route path="/users/:userId" component={UserInfoContainer}/>
-    <Route path="/users/:userId" component={ProfilePostIndexContainer}/>
+    <ProtectedRoute path="/users/:userId" component={UserInfoContainer}/>
+    <ProtectedRoute path="/users/:userId" component={ProfilePostIndexContainer}/>
   </div>
 );
 // <Route path="/users/:userId" component={ProfilePage}/>

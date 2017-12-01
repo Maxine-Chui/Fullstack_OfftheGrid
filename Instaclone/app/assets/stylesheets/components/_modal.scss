@@ -1,0 +1,40 @@
+.post-show-modal{
+ position: absolute;
+ width: 800px;
+ height: 600px;
+ top: 50%;
+ left: 50%;
+ -webkit-transform: translate(-50%, -50%);
+ border-radius: 2px;
+ padding: 10px;
+ background: white;
+ display: flex;
+ flex-direction: row;
+ // opacity: 0.96;
+}
+
+.ReactModal__Body--open {
+ overflow: hidden;
+}
+
+.post-show-overlay {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(0.3, 0.3, 0.3, 0.3);
+}
+
+.post-show-photo img{
+  // width: 600px;
+  height: 600px;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+  object-position: center;
+}
+
+.post-show-comment-section {
+  display: flex;
+}
