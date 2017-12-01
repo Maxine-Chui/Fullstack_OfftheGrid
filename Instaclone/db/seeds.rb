@@ -26,14 +26,29 @@ end
 reset_pk_num
 
 #Users
-user1 = User.create!(username:"user1", password: "useruser1", email: "user1@user1.com",
-  img_url:"http://cdn1-www.dogtime.com/assets/uploads/gallery/siberian-husky-dog-breed-pictures/siberian-husky-dog-breed-pictures-3.jpg")
-user2 = User.create!(username:"user2", password: "useruser2", email: "user2@user2.com",
-  img_url:"https://images.unsplash.com/photo-1508499207119-a3f6cb551c0a?auto=format&fit=crop&w=1050&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D")
-user3 = User.create!(username:"user3", password: "useruser3", email: "user3@user3.com",
-  img_url:"https://images.unsplash.com/photo-1506259291727-cc30f10b0ab2?auto=format&fit=crop&w=965&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D")
-user4 = User.create!(username:"user4", password: "useruser4", email: "user4@user4.com",
-  img_url:"https://images.unsplash.com/photo-1488643673641-1527a227662e?auto=format&fit=crop&w=1166&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D")
+user1 = User.create!(username:"No One", password: "useruser", email: "user1@user1.com", blurb: "Not today.", name: "Arya Stark",
+  img_url:"http://esquireuk.cdnds.net/17/48/980x490/landscape-1512041436-arya-stark.jpg")
+user2 = User.create!(username:"King in the North", password: "useruser", email: "user2@user2.com", blurb: "Who's my daddy? I’m in love with my auntie", name: "Jon Snow",
+  img_url:"https://resizing.flixster.com/oNIe1GP62oBAGhvpCRGiKx-UZa8=/300x300/v1.cDsxNDA5MDkzNztqOzE3NTc4OzEyMDA7NDY3OzU0Mg")
+user3 = User.create!(username:"Imp", password: "useruser", email: "user3@user3.com", blurb: "I drink and I know things", name: "Tyrion Lannister",
+  img_url:"https://hdqwalls.com/wallpapers/tyrion-lannister-game-of-thrones-new.jpg")
+user4 = User.create!(username:"Kingslayer", password: "useruser", email: "user4@user4.com", blurb: "Can you lend me a hand?", name: "Jaime Lannister",
+  img_url:"https://pbs.twimg.com/profile_images/853288399293120514/kQU6rncY.jpg")
+user5 = User.create!(username:"Eddard", password: "useruser", email:"user5@user5.com", blurb: "RIP", name: "Ned Stark",
+  img_url:"https://media.lifeposts.com/site_media/media/image/a3f84ecd-6462-403a-be06-3b5f297836af.jpg")
+user6 = User.create!(username:"The Queen", password: "useruser", email: "user6@user6.com", blurb: "No shame.", name: "Cersei Lannister",
+  img_url:"https://vignette.wikia.nocookie.net/gameofthrones/images/c/c3/Profile-CerseiLannister.png/revision/latest/scale-to-width-down/323?cb=20170828071355")
+user7 = User.create!(username:"Lady of Winterfell", password: "useruser", email: "user7@user7.com", blurb: "Winter is here. I’m the captain now.", name: "Sansa Stark",
+  img_url:"https://vignette.wikia.nocookie.net/gameofthrones/images/6/6a/S7_Sansa_Stark_Profil.jpg/revision/latest/scale-to-width-down/310?cb=20170531101147&path-prefix=de")
+user8 = User.create!(username:"Khaleesi", password: "useruser", email: "user8@user8.com", blurb: "The First of Her Name, The Unburnt, Queen of the Andals, Breaker of Chains and Mother of Dragons", name: "Daenerys Targaryen",
+  img_url:"http://www.fandomisinthedetails.com/uploads/1/9/2/0/19201953/8161305_orig.jpg")
+user9 = User.create!(username:"Three Eyed Raven", password: "useruser", email: "user9@user9.com", blurb: "Warging > walking", name: "Bran Stark",
+  img_url:"http://digitalspyuk.cdnds.net/17/14/768x408/gallery-1491600567-got11.jpg")
+user10 = User.create!(username:"Reek", password: "useruser", email: "user10@user10.com", blurb: "My least favorite food is sausage.", name: "Theon Greyjoy",
+  img_url:"https://upload.wikimedia.org/wikipedia/en/5/51/Theon_Greyjoy-Alfie_Allen.jpg")
+user11 = User.create!(username:"Hodor", password: "useruser", email: "user11@user11.com", blurb: "But I’m really a DJ", name: "Hodor Holdthedoor",
+  img_url:"http://nationalave.com/wp-content/uploads/2016/05/hodor.jpg")
+
 
 #Posts
 post1 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464287/andreas-fidler-400356_rjwkgk.jpg",
@@ -66,6 +81,37 @@ post14 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/
     location: "Highest point on earth", caption: "Feeling high", author_id: user2.id)
 post15 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/v1511811750/jfbdrg0ciwcebqpfh0sr.jpg",
     location: "In a crevasse", caption: "Burrrr", author_id: user3.id)
+post16 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154344/enis-yavuz-189633_hbpgak.jpg",
+    location: "A glacier lagoon in Iceland", caption: "I’m a puffy orange marshmallow", author_id: user5.id)
+post17 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_2:3,c_crop/v1512154336/etienne-bosiger-367964_vh8oli.jpg",
+    location: "Somewhere out there", caption: "To the tippy top!", author_id: user6.id)
+post18 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_2:3,c_crop/v1512154338/greg-rakozy-207199_mb88ri.jpg",
+    location: "Cabin in the woods", caption: "Not a castle but not too shabby", author_id: user7.id)
+post19 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_6:4,c_crop/v1512154336/holly-mandarich-326680_c3ibcn.jpg",
+    location: "Freedom", caption: "Khal Drogo would’ve loved this place", author_id: user8.id)
+post20 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_2:3,c_crop/v1512154344/tom-barrett-329280_ssb5tx.jpg",
+    location: "Outta this world", caption: "I see…something", author_id: user9.id)
+post21 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/v1512154346/tommy-lisbin-373139_exntzr.jpg",
+    location: "In a crack", caption: "Hand jammin", author_id: user10.id)
+post22 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154350/trevor-cole-389921_k0pdoi.jpg",
+    location: "King’s Road", caption: "Things don’t end well on this road", author_id: user11.id)
+post23 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_6:4,c_crop/v1512154338/kate-56791_dxybu6.jpg",
+    location: "", caption: "My hair flip is better than yours", author_id: user3.id)
+post24 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154339/mahir-uysal-229897_jktj9k.jpg",
+    location: "Yosemite", caption: "It’s not that cold tho", author_id: user1.id)
+post25 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154345/zelle-duda-373004_nxjwr3.jpg",
+    location: "Statue of Liberty", caption: "Lady Liberty or Lady of Winterfell?", author_id: user7.id)
+post26 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/v1512154340/mariusz-prusaczyk-190811_tllziy.jpg",
+    location: "The Wall", caption: "Before the fire", author_id: user2.id)
+post27 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_6:4,c_crop/v1512154335/iler-stoe-358786_igep3l.jpg",
+    location: "Beyond the Wall", caption: "Dem white walkers", author_id: user2.id)
+post28 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_6:4,c_crop/v1512154344/wynand-van-poortvliet-64523_qyv0g5.jpg",
+    location: "The Vale", caption: "Moon door’s pretty cool", author_id: user3.id)
+post29 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154342/zak-boca-292600_wcqvbr.jpg",
+    location: "Off the grid", caption: "Running away from my sister", author_id: user4.id)
+post30 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/v1512156015/tommy-lisbin-316755_w0oszg.jpg",
+    location: "", caption: "Don’t fall don’t fall don’t fall", author_id: user3.id)
+
 
 #Likes
 like1 = Like.create!(post_id: post1.id, user_id: user2.id)
@@ -75,6 +121,24 @@ like4 = Like.create!(post_id: post3.id, user_id: user1.id)
 like5 = Like.create!(post_id: post3.id, user_id: user3.id)
 like6 = Like.create!(post_id: post4.id, user_id: user1.id)
 like7 = Like.create!(post_id: post5.id, user_id: user1.id)
+like8 = Like.create!(post_id: post6.id, user_id: user1.id)
+like9 = Like.create!(post_id: post7.id, user_id: user2.id)
+like10 = Like.create!(post_id: post8.id, user_id: user3.id)
+like11= Like.create!(post_id: post9.id, user_id: user4.id)
+like12 = Like.create!(post_id: post10.id, user_id: user5.id)
+like13 = Like.create!(post_id: post11.id, user_id: user6.id)
+like14 = Like.create!(post_id: post12.id, user_id: user7.id)
+like15 = Like.create!(post_id: post13.id, user_id: user8.id)
+like16 = Like.create!(post_id: post14.id, user_id: user9.id)
+like17 = Like.create!(post_id: post15.id, user_id: user10.id)
+like18 = Like.create!(post_id: post16.id, user_id: user11.id)
+like19 = Like.create!(post_id: post17.id, user_id: user2.id)
+like20 = Like.create!(post_id: post18.id, user_id: user1.id)
+like21 = Like.create!(post_id: post19.id, user_id: user1.id)
+like22 = Like.create!(post_id: post20.id, user_id: user1.id)
+like23 = Like.create!(post_id: post21.id, user_id: user1.id)
+like24 = Like.create!(post_id: post22.id, user_id: user1.id)
+like25 = Like.create!(post_id: post23.id, user_id: user1.id)
 
 #Comments
 comment1 = Comment.create!(body: "Amazing shot!", post_id: post3.id, author_id: user1.id)
@@ -93,3 +157,17 @@ follow3 = Follow.create!(follower_id: user1.id, followee_id: user4.id)
 follow4 = Follow.create!(follower_id: user2.id, followee_id: user1.id)
 follow5 = Follow.create!(follower_id: user2.id, followee_id: user3.id)
 follow6 = Follow.create!(follower_id: user3.id, followee_id: user1.id)
+follow7 = Follow.create!(follower_id: user4.id, followee_id: user1.id)
+follow8 = Follow.create!(follower_id: user5.id, followee_id: user1.id)
+follow9 = Follow.create!(follower_id: user6.id, followee_id: user1.id)
+follow10 = Follow.create!(follower_id: user7.id, followee_id: user1.id)
+follow11 = Follow.create!(follower_id: user8.id, followee_id: user1.id)
+follow12 = Follow.create!(follower_id: user9.id, followee_id: user1.id)
+follow13 = Follow.create!(follower_id: user10.id, followee_id: user1.id)
+follow14 = Follow.create!(follower_id: user11.id, followee_id: user1.id)
+follow15 = Follow.create!(follower_id: user1.id, followee_id: user5.id)
+follow16 = Follow.create!(follower_id: user1.id, followee_id: user6.id)
+follow17 = Follow.create!(follower_id: user1.id, followee_id: user7.id)
+follow18 = Follow.create!(follower_id: user2.id, followee_id: user8.id)
+follow19 = Follow.create!(follower_id: user3.id, followee_id: user7.id)
+follow20 = Follow.create!(follower_id: user4.id, followee_id: user6.id)

@@ -23,7 +23,8 @@ const mapStateToProps = (state, ownProps) => {
     numLikes: ownProps.post.likes,
     liked: ownProps.post.liked_by_current_user,
     postId: ownProps.post.id,
-    postComments: postComments(state, ownProps.post.id)
+    postComments: postComments(state, ownProps.post.id),
+    postOwner: ownProps.post.author_id
   };
 };
 

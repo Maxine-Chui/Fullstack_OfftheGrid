@@ -15,15 +15,16 @@ class CommentsItem extends React.Component {
   }
 
   deleteCommentButton(){
-    const { currentUser, comment } = this.props;
+    const { currentUser, comment, postOwner } = this.props;
     const deleteButton = <button className="delete-comment"><i className="fa fa-times" onClick={this.deleteComment} aria-hidden="true"></i></button>
-    if (currentUser.id === comment.author_id){
+    if (currentUser.id === comment.author_id || currentUser.id === postOwner){
       return deleteButton;
+    // } else if (currentUser.id === postOwner){
+    //   return deleteButton;
     }
   }
 
   render() {
-
     const { comment } = this.props;
     return (
       <li>
