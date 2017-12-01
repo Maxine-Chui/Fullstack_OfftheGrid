@@ -12,6 +12,7 @@
       json.liked_by_current_user false
     end
     json.comments post.comments.map(&:id)
+    json.age time_ago_in_words(post.created_at)
           # json.comment_id comment.id
           # json.commenter_name comment.commenter.username
           # json.commenter_id comment.author_id

@@ -99,7 +99,7 @@ class LikesAndComments extends React.Component {
               ))
             }
           </ul>
-
+          <div className="feed-post-age">{this.props.age}&nbsp;ago</div>
           <div className="add-comment">
 
             <label>

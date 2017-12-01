@@ -30,14 +30,14 @@
 
 .post-show-photo img{
   width: auto;
-  max-height: 500px;
+  max-height: 600px;
 }
 
 .post-show-comment-section{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 250px;
+  width: 300px;
   padding-top: 10px;
 }
 
@@ -84,7 +84,7 @@
   flex-direction: row;
   margin-left: 20px;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
 }
 
 .post-like-icon{
@@ -107,7 +107,7 @@
   margin-right: 10px;
   margin-top: 10px;
   cursor: pointer;
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
 .post-num-likes {
@@ -117,6 +117,17 @@
   font-family: $roboto;
   font-size: 14px;
   font-weight: 600;
+}
+
+.post-age{
+  font-family: $roboto;
+  color: $gray;
+  font-size: 12px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $lighter-gray;
+  margin-bottom: 4px;
 }
 
 .post-add-comment{

@@ -24,7 +24,8 @@ const mapStateToProps = (state, ownProps) => {
     liked: ownProps.post.liked_by_current_user,
     postId: ownProps.post.id,
     postComments: postComments(state, ownProps.post.id),
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    age: ownProps.post.age
   };
 };
 

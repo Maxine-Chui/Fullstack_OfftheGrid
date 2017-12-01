@@ -110,7 +110,7 @@ class PostShow extends React.Component {
               <div className="post-bookmark-icon"><i className="fa fa-bookmark-o" aria-hidden="true"></i></div>
             </div>
             <div className="post-num-likes">{this.likes()}</div>
-
+            <div className="post-age">{this.props.age}&nbsp;ago</div>
             <div className="post-add-comment">
 
               <label>

@@ -10,6 +10,7 @@ json.set! @post.id do
   json.likes @post.likes.count
   json.liked_by_current_user !!@post.likes.find_by(user_id: current_user.id)
   json.comments @post.comments.map(&:id)
+  json.age time_ago_in_words(@post.created_at)
     # json.array! @post.comments do |comment|
     #   json.comment_id comment.id
     #   json.comments post.comments.map(&:id)
