@@ -5,7 +5,7 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   border-radius: 2px;
-  padding: 10px;
+  // padding: 10px;
   background: white;
   display: inline;
   // opacity: 0.96;
@@ -38,14 +38,15 @@
   flex-direction: column;
   justify-content: space-between;
   width: 250px;
+  padding-top: 10px;
 }
 
 .exit-modal {
   color: $dark-gray;
   font-size: 28px;
   position: fixed;
-  top: 8px;
-  right:8px;
+  top: 5px;
+  right: 5px;
 }
 
 .author-snippet {
@@ -106,6 +107,7 @@
   margin-right: 10px;
   margin-top: 10px;
   cursor: pointer;
+  margin-right: 15px;
 }
 
 .post-num-likes {

@@ -47,8 +47,9 @@
 .uploaded-photo {
   object-fit: cover;
   object-position: center;
-  min-width: 100%;
-  min-height: 100%;
+  // width: auto;
+  max-width: 500px;
+  max-height: 500px;
   // height: 400px;
   // width: 600px;
 }
