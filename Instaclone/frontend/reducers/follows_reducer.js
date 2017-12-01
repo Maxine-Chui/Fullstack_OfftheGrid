@@ -18,7 +18,6 @@ const followsReducer = (state = {}, action) => {
       return merge({}, state, action.follow);
     case REMOVE_FOLLOW:
       let newState = merge({}, state);
-      // console.log(action.followId);
       delete newState[Object.keys(action.followId)[0]];
       return newState;
     default:

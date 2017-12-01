@@ -27,7 +27,7 @@ reset_pk_num
 
 #Users
 user1 = User.create!(username:"No One", password: "useruser", email: "user1@user1.com", blurb: "Not today.", name: "Arya Stark",
-  img_url:"http://esquireuk.cdnds.net/17/48/980x490/landscape-1512041436-arya-stark.jpg")
+  img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/v1512169709/landscape-1512041436-arya-stark_owznab.jpg")
 user2 = User.create!(username:"King in the North", password: "useruser", email: "user2@user2.com", blurb: "Who's my daddy? I’m in love with my auntie", name: "Jon Snow",
   img_url:"https://resizing.flixster.com/oNIe1GP62oBAGhvpCRGiKx-UZa8=/300x300/v1.cDsxNDA5MDkzNztqOzE3NTc4OzEyMDA7NDY3OzU0Mg")
 user3 = User.create!(username:"Imp", password: "useruser", email: "user3@user3.com", blurb: "I drink and I know things", name: "Tyrion Lannister",
@@ -41,75 +41,75 @@ user6 = User.create!(username:"The Queen", password: "useruser", email: "user6@u
 user7 = User.create!(username:"Lady of Winterfell", password: "useruser", email: "user7@user7.com", blurb: "Winter is here. I’m the captain now.", name: "Sansa Stark",
   img_url:"https://vignette.wikia.nocookie.net/gameofthrones/images/6/6a/S7_Sansa_Stark_Profil.jpg/revision/latest/scale-to-width-down/310?cb=20170531101147&path-prefix=de")
 user8 = User.create!(username:"Khaleesi", password: "useruser", email: "user8@user8.com", blurb: "The First of Her Name, The Unburnt, Queen of the Andals, Breaker of Chains and Mother of Dragons", name: "Daenerys Targaryen",
-  img_url:"http://www.fandomisinthedetails.com/uploads/1/9/2/0/19201953/8161305_orig.jpg")
+  img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/v1512169653/8161305_orig_i2byd9.jpg")
 user9 = User.create!(username:"Three Eyed Raven", password: "useruser", email: "user9@user9.com", blurb: "Warging > walking", name: "Bran Stark",
-  img_url:"http://digitalspyuk.cdnds.net/17/14/768x408/gallery-1491600567-got11.jpg")
+  img_url:"https://digitalspyuk.cdnds.net/17/14/768x408/gallery-1491600567-got11.jpg")
 user10 = User.create!(username:"Reek", password: "useruser", email: "user10@user10.com", blurb: "My least favorite food is sausage.", name: "Theon Greyjoy",
   img_url:"https://upload.wikimedia.org/wikipedia/en/5/51/Theon_Greyjoy-Alfie_Allen.jpg")
 user11 = User.create!(username:"Hodor", password: "useruser", email: "user11@user11.com", blurb: "But I’m really a DJ", name: "Hodor Holdthedoor",
-  img_url:"http://nationalave.com/wp-content/uploads/2016/05/hodor.jpg")
+  img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/v1512169689/hodor_dqcpun.jpg")
 
 
 #Posts
-post1 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464287/andreas-fidler-400356_rjwkgk.jpg",
+post1 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464287/andreas-fidler-400356_rjwkgk.jpg",
   location: "Rad Rocks", caption: "Sunday send day", author_id: user1.id)
-post2 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464309/greg-rakozy-199745_hx9pch.jpg",
+post2 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464309/greg-rakozy-199745_hx9pch.jpg",
   location: "Somewhere cold", caption: "Ice ice baby", author_id: user1.id)
-post3 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464471/johny-goerend-403554_frvhe1.jpg",
+post3 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464471/johny-goerend-403554_frvhe1.jpg",
   location: "Probably Iceland", caption: "Aurora BoreaLIT", author_id: user2.id)
-post4 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464281/jennifer-pallian-146562_qrpzj2.jpg",
+post4 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464281/jennifer-pallian-146562_qrpzj2.jpg",
   location: "My dreams", caption: "I'm a monster", author_id: user2.id)
-post5 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464297/dylan-siebel-166035_gau6oi.jpg",
+post5 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464297/dylan-siebel-166035_gau6oi.jpg",
   location: "Higher than you", caption: "Getting high", author_id: user3.id)
-post6 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464281/jennifer-pallian-173715_uoq6n3.jpg",
+post6 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511464281/jennifer-pallian-173715_uoq6n3.jpg",
   author_id: user4.id)
-post7 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1511579792/atle-mo-209964_th4thi.jpg",
+post7 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1511579792/atle-mo-209964_th4thi.jpg",
     location: "Dark Forest", caption: "So much wood", author_id: user1.id)
-post8 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1511579794/brooke-lark-158019_l3wuer.jpg",
+post8 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1511579794/brooke-lark-158019_l3wuer.jpg",
   location: "Hipster cafe", caption: "Fake food", author_id: user1.id)
-post9 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_4:3,c_crop/v1511579797/kevin-chen-330761_vd4kho.jpg",
+post9 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_4:3,c_crop/v1511579797/kevin-chen-330761_vd4kho.jpg",
     location: "Yosemite", caption: "Where I wanna be", author_id: user1.id)
-post10 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_4:3,c_crop/v1511579792/joshua-reddekopp-217223_blv6v2.jpg",
+post10 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_4:3,c_crop/v1511579792/joshua-reddekopp-217223_blv6v2.jpg",
     location: "Heaven", caption: "Pow pow pow", author_id: user1.id)
-post11 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511579792/stephen-leonardi-369720_shdc8s.jpg",
+post11 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511579792/stephen-leonardi-369720_shdc8s.jpg",
     location: "Firefalls", caption: "You wish you saw this", author_id: user1.id)
-post12 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1511808463/krgrexsyhqx2ifh0p1j6.jpg",
+post12 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1511808463/krgrexsyhqx2ifh0p1j6.jpg",
     location: "Mars", caption: "I'm an alien", author_id: user1.id)
-post13 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_2:3,c_crop/v1511810027/coezaptubxteudqxast7.jpg",
+post13 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1511810027/coezaptubxteudqxast7.jpg",
     location: "On rock", caption: "Rock on", author_id: user2.id)
-post14 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_6:4,c_crop/v1511810270/jpnvt2cxatuoxtlkboxk.jpg",
+post14 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_4:3,c_crop/v1511810270/jpnvt2cxatuoxtlkboxk.jpg",
     location: "Highest point on earth", caption: "Feeling high", author_id: user2.id)
-post15 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/v1511811750/jfbdrg0ciwcebqpfh0sr.jpg",
+post15 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/v1511811750/jfbdrg0ciwcebqpfh0sr.jpg",
     location: "In a crevasse", caption: "Burrrr", author_id: user3.id)
-post16 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154344/enis-yavuz-189633_hbpgak.jpg",
+post16 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154344/enis-yavuz-189633_hbpgak.jpg",
     location: "A glacier lagoon in Iceland", caption: "I’m a puffy orange marshmallow", author_id: user5.id)
-post17 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_2:3,c_crop/v1512154336/etienne-bosiger-367964_vh8oli.jpg",
+post17 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1512154336/etienne-bosiger-367964_vh8oli.jpg",
     location: "Somewhere out there", caption: "To the tippy top!", author_id: user6.id)
-post18 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_2:3,c_crop/v1512154338/greg-rakozy-207199_mb88ri.jpg",
+post18 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1512154338/greg-rakozy-207199_mb88ri.jpg",
     location: "Cabin in the woods", caption: "Not a castle but not too shabby", author_id: user7.id)
-post19 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_6:4,c_crop/v1512154336/holly-mandarich-326680_c3ibcn.jpg",
+post19 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_4:3,c_crop/v1512154336/holly-mandarich-326680_c3ibcn.jpg",
     location: "Freedom", caption: "Khal Drogo would’ve loved this place", author_id: user8.id)
-post20 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_2:3,c_crop/v1512154344/tom-barrett-329280_ssb5tx.jpg",
+post20 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_3:4,c_crop/v1512154344/tom-barrett-329280_ssb5tx.jpg",
     location: "Outta this world", caption: "I see…something", author_id: user9.id)
-post21 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/v1512154346/tommy-lisbin-373139_exntzr.jpg",
+post21 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/v1512154346/tommy-lisbin-373139_exntzr.jpg",
     location: "In a crack", caption: "Hand jammin", author_id: user10.id)
-post22 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154350/trevor-cole-389921_k0pdoi.jpg",
+post22 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154350/trevor-cole-389921_k0pdoi.jpg",
     location: "King’s Road", caption: "Things don’t end well on this road", author_id: user11.id)
-post23 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_6:4,c_crop/v1512154338/kate-56791_dxybu6.jpg",
+post23 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_4:3,c_crop/v1512154338/kate-56791_dxybu6.jpg",
     location: "", caption: "My hair flip is better than yours", author_id: user3.id)
-post24 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154339/mahir-uysal-229897_jktj9k.jpg",
+post24 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154339/mahir-uysal-229897_jktj9k.jpg",
     location: "Yosemite", caption: "It’s not that cold tho", author_id: user1.id)
-post25 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154345/zelle-duda-373004_nxjwr3.jpg",
+post25 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154345/zelle-duda-373004_nxjwr3.jpg",
     location: "Statue of Liberty", caption: "Lady Liberty or Lady of Winterfell?", author_id: user7.id)
-post26 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/v1512154340/mariusz-prusaczyk-190811_tllziy.jpg",
+post26 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/v1512154340/mariusz-prusaczyk-190811_tllziy.jpg",
     location: "The Wall", caption: "Before the fire", author_id: user2.id)
-post27 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_6:4,c_crop/v1512154335/iler-stoe-358786_igep3l.jpg",
+post27 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_4:3,c_crop/v1512154335/iler-stoe-358786_igep3l.jpg",
     location: "Beyond the Wall", caption: "Dem white walkers", author_id: user2.id)
-post28 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_6:4,c_crop/v1512154344/wynand-van-poortvliet-64523_qyv0g5.jpg",
+post28 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_4:3,c_crop/v1512154344/wynand-van-poortvliet-64523_qyv0g5.jpg",
     location: "The Vale", caption: "Moon door’s pretty cool", author_id: user3.id)
-post29 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154342/zak-boca-292600_wcqvbr.jpg",
+post29 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/ar_1:1,c_crop/v1512154342/zak-boca-292600_wcqvbr.jpg",
     location: "Off the grid", caption: "Running away from my sister", author_id: user4.id)
-post30 = Post.create!(img_url:"http://res.cloudinary.com/dqhhpt0sj/image/upload/v1512156015/tommy-lisbin-316755_w0oszg.jpg",
+post30 = Post.create!(img_url:"https://res.cloudinary.com/dqhhpt0sj/image/upload/v1512156015/tommy-lisbin-316755_w0oszg.jpg",
     location: "", caption: "Don’t fall don’t fall don’t fall", author_id: user3.id)
 
 
