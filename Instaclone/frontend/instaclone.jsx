@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   const root = document.getElementById('root');
-  // console.log("in doc ready");
   // window.login = login;
   // window.logout = logout;
   // window.signup = signup;

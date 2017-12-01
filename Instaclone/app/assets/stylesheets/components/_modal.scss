@@ -1,16 +1,14 @@
 .post-show-modal{
- position: absolute;
- width: 800px;
- height: 600px;
- top: 50%;
- left: 50%;
- -webkit-transform: translate(-50%, -50%);
- border-radius: 2px;
- padding: 10px;
- background: white;
- display: flex;
- flex-direction: row;
- // opacity: 0.96;
+  position: absolute;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  border-radius: 2px;
+  padding: 10px;
+  background: white;
+  display: inline;
+  // opacity: 0.96;
 }
 
 .ReactModal__Body--open {
@@ -18,23 +16,112 @@
 }
 
 .post-show-overlay {
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: rgba(0.3, 0.3, 0.3, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0.7, 0.7, 0.7, 0.7);
+}
+
+.post-show-container{
+  display: flex;
 }
 
 .post-show-photo img{
-  // width: 600px;
-  height: 600px;
-  object-fit: cover;
-  min-width: 100%;
-  min-height: 100%;
-  object-position: center;
+  width: auto;
+  max-height: 500px;
 }
 
-.post-show-comment-section {
+.post-show-comment-section{
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+}
+
+.exit-modal {
+  color: $dark-gray;
+  font-size: 28px;
+  position: fixed;
+  top: 10px;
+  right:10px;
+}
+
+.author-snippet {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+.comment-author-photo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 8px;
+}
+
+.comment-author{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.comment-snippet {
+  margin-left: 16px;
+  font-family: $roboto;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.post-show-action-icons {
+  font-size: 24px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.post-like-icon{
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.post-comment-icon{
+  margin-top: 8px;
+  flex:2;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.post-bookmark-icon {
+  margin-right: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.post-num-likes {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  font-family: $roboto;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.post-add-comment{
+  margin-left: 10px;
+  font-family: $roboto;
+  font-size: 14px;
+  width: 100%;
+}
+
+.post-delete-comment {
+  font-size: 14px;
+  float: right;
+  margin-right: 26px;
+  margin-top: 2px;
+  color: $gray;
 }

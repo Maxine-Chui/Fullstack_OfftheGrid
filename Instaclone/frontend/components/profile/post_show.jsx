@@ -74,47 +74,56 @@ class PostShow extends React.Component {
     const { post, currentUser, deleteComment } = this.props;
 
     return (
-      <div>
+      <div className="post-show-container">
         <div className="post-show-photo"><img src={post.img_url}/></div>
         <div className="post-show-comment-section">
-          <div className="comment-snippet">
-            <Link to={`/users/${post.author_id}`}><span className="comment-author">{this.authorCaption()}</span></Link>
-            <span className="comment-body">{this.caption()}</span>
-          </div>
+          <div className="comment-top">
+              <div className="comment-snippet">
+                <div className="author-snippet">
+                  <img className="comment-author-photo" src={post.author_photo}/>
+                  <div className="comment-author">{post.username}</div>
+                </div>
+                <div>
+                  <Link to={`/users/${post.author_id}`}><span className="comment-author">{this.authorCaption()}</span></Link>
+                  <span className="comment-body">{this.caption()}</span>
+                </div>
+              </div>
 
-          <div>
-            <ul className="comments-items">
-              {
-                this.props.postComments.map(comment => (
-                  <PostCommentsItem
-                    key={comment.id}
-                    comment={ comment }
-                    currentUser={ currentUser }
-                    deleteComment={ deleteComment }/>
-                ))
-              }
-            </ul>
-          </div>
+              <div>
+                <ul className="comments-items">
+                  {
+                    this.props.postComments.map(comment => (
+                      <PostCommentsItem
+                        key={comment.id}
+                        comment={ comment }
+                        currentUser={ currentUser }
+                        deleteComment={ deleteComment }/>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+          <div className="post-likes-and-comments">
+            <div className="post-show-action-icons">
+              <div className="post-like-icon">{this.toggleLikeButton()}</div>
+              <label htmlFor="add-comment-enter" className="post-comment-icon"><i  className="fa fa-comment-o" aria-hidden="true"></i></label>
+              <div className="post-bookmark-icon"><i className="fa fa-bookmark-o" aria-hidden="true"></i></div>
+            </div>
+            <div className="post-num-likes">{this.likes()}</div>
 
-          <div className="post-action-icons">
-            <div className="like-icon">{this.toggleLikeButton()}</div>
-            <div className="comment-icon"><i className="fa fa-comment-o" aria-hidden="true"></i></div>
-            <div className="bookmark-icon"><i className="fa fa-bookmark-o" aria-hidden="true"></i></div>
-          </div>
-          <div className="num-likes">{this.likes()}</div>
+            <div className="post-add-comment">
 
-          <div className="add-comment">
-
-            <label>
-              <input id="add-comment-enter"
-                type="text"
-                placeholder="Add a comment..."
-                value={this.state.body}
-                onChange={this.update('body')}
-                onKeyUp={this.addComment}
-                className="add-comment-input"
-                />
-            </label>
+              <label>
+                <input id="add-comment-enter"
+                  type="text"
+                  placeholder="Add a comment..."
+                  value={this.state.body}
+                  onChange={this.update('body')}
+                  onKeyUp={this.addComment}
+                  className="add-comment-input"
+                  />
+              </label>
+            </div>
           </div>
         </div>
       </div>

@@ -36,7 +36,6 @@ class ProfilePostIndexItem extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     const { post, comments } = this.props;
     return (
       <div>
@@ -52,10 +51,9 @@ class ProfilePostIndexItem extends React.Component {
           className="post-show-modal"
           overlayClassName="post-show-overlay"
           >
-          <button className="exit-modal" onClick={this.closeModal}>X</button>
+          <button className="exit-modal"><i className="fa fa-times" onClick={this.closeModal} aria-hidden="true"></i></button>
 
           <PostShowContainer post={ post } comments={comments}/>
-
         </Modal>
       </div>
     );
@@ -63,6 +61,7 @@ class ProfilePostIndexItem extends React.Component {
 
 
 }
+// <button className="exit-modal" onClick={this.closeModal}>X</button>
 
 
 export default ProfilePostIndexItem;

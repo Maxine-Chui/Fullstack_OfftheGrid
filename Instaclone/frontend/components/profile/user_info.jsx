@@ -17,6 +17,12 @@ class UserInfo extends React.Component {
     // this.props.fetchFollowees(this.props.match.params.userId);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.userId !== nextProps.match.params.userId) {
+      this.props.fetchUser(nextProps.match.params.userId);
+    }
+  }
+
   toggleFollow(e) {
     e.preventDefault();
     const follow = this.props.followed;

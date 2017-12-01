@@ -77,7 +77,7 @@ class LikesAndComments extends React.Component {
       <div className="likes-comments-container">
         <div className="post-action-icons">
           <div className="like-icon">{this.toggleLikeButton()}</div>
-          <div className="comment-icon"><i className="fa fa-comment-o" aria-hidden="true"></i></div>
+          <label htmlFor="add-comment-enter" className="comment-icon"><i className="fa fa-comment-o" aria-hidden="true"></i></label>
           <div className="bookmark-icon"><i className="fa fa-bookmark-o" aria-hidden="true"></i></div>
         </div>
         <div className="num-likes">{this.likes()}</div>

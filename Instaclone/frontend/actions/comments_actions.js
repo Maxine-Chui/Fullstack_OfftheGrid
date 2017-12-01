@@ -33,10 +33,6 @@ export const fetchPostComments = (postId) => dispatch => (
   APICommentsUtil.fetchPostComments(postId).then(comments => dispatch(receivePostComments(comments)))
 );
 
-// export const fetchComments = () => dispatch => (
-//   APICommentsUtil.fetchComments().then(comments => dispatch(receivePostComments(comments, postId)))
-// );
-
 export const createComment = (postId, comment) => dispatch => (
   APICommentsUtil.createComment(postId, comment).then(commentMade => dispatch(receiveComment(commentMade)))
 );

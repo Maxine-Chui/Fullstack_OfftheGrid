@@ -5,7 +5,6 @@
   display: flex;
   column-count: 3;
   justify-content: left;
-  // flex-wrap: wrap;
   flex-flow: row wrap;
 }
 //
@@ -13,7 +12,6 @@
   width: 290px;
   height: 290px;
   overflow: hidden;
-  // display: inline-block;
   margin-bottom: 25px;
   cursor: pointer;
   margin-left: 12.5px;
@@ -27,8 +25,3 @@
   object-fit: cover;
   object-position: center;
 }
-
-// .profile-grid-item:nth-child(3n+2) {
-//   margin-left: 25px;
-//   margin-right: 25px;
-// }

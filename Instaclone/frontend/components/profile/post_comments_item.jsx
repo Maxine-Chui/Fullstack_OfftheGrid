@@ -16,7 +16,7 @@ class PostCommentsItem extends React.Component {
 
   deleteCommentButton(){
     const { currentUser, comment } = this.props;
-    const deleteButton = <button className="delete-comment"><i className="fa fa-times" onClick={this.deleteComment} aria-hidden="true"></i></button>
+    const deleteButton = <button className="post-delete-comment"><i className="fa fa-times" onClick={this.deleteComment} aria-hidden="true"></i></button>
     if (currentUser.id === comment.author_id){
       return deleteButton;
     }
