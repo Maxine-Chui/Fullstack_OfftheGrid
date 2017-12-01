@@ -67,3 +67,35 @@
   padding-right: 12px;
   cursor: pointer;
 }
+
+.footer {
+  height: 25px;
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid $lighter-gray;
+  color: $dark-gray;
+  font-family: $roboto;
+  font-weight: bold;
+  width: 100%;
+  background-color: white;
+  align-items: center;
+}
+
+.website-links {
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.linkedin {
+  margin-left: 20px;
+}
+
+.email {
+  margin-right: 20px;
+}

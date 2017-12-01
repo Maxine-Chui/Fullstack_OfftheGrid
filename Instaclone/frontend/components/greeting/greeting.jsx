@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 
 const personalGreeting = (currentUser, logout) => {
   return (
+
     <hgroup className="header-group">
       <div className="nav-logos">
         <div className="nav-logo-group">

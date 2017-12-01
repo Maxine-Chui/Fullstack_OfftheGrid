@@ -43,6 +43,26 @@ class UserInfo extends React.Component {
     }
   }
 
+  posts(){
+    if (this.props.numPosts > 1) {
+      return 'posts';
+    } else if (this.props.numPosts === 0) {
+      return 'posts';
+    } else {
+      return 'post';
+    }
+  }
+
+  follows(){
+    if (this.props.numFollows > 1) {
+      return 'followers';
+    } else if (this.props.numFollows === 0) {
+      return 'followers';
+    } else {
+      return 'follower';
+    }
+  }
+
   render() {
     return(
       <div className="user-profile-container">
@@ -53,9 +73,13 @@ class UserInfo extends React.Component {
             <div>{this.toggleFollowButton()}</div>
           </div>
           <div className="profile-numbers">
-            <div className="num=posts">{this.props.numPosts}&nbsp;posts</div>
-            <div className="num-followers">{this.props.numFollows}&nbsp;followers</div>
-            <div className="num-following">{this.props.numFollowing}&nbsp;following</div>
+            <div className="num=posts"><strong>{this.props.numPosts}</strong>&nbsp;&nbsp;{this.posts()}</div>
+            <div className="num-followers"><strong>{this.props.numFollows}</strong>&nbsp;&nbsp;{this.follows()}</div>
+            <div className="num-following"><strong>{this.props.numFollowing}</strong>&nbsp;&nbsp;following</div>
+          </div>
+          <div className="profile-blurb">
+            <div className="user-fullname">{this.props.user.name}</div>
+            <div className="user-blurb">{this.props.user.blurb}</div>
           </div>
         </div>
     </div>

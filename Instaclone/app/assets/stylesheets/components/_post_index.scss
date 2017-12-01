@@ -70,9 +70,13 @@
  }
 
  .comment-icon {
-   margin-left: 16px;
-   cursor: pointer;
-   margin-top: 8px;
+  margin-left: 16px;
+  cursor: pointer;
+  margin-top: 8px;
+ }
+
+ .comment-icon:hover{
+  color: $gray;
  }
 
  .bookmark-icon {

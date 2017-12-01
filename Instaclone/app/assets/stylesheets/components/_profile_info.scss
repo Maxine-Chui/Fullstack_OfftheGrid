@@ -40,7 +40,7 @@
   // font-family: $roboto;
   font-size: 28px;
   margin-left: 100px;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .follow {
@@ -51,7 +51,7 @@
   border-radius: 3px;
   text-align: center;
   font-size: 16px;
-  margin-top: 30px;
+  margin-top: 15px;
   margin-left: 50px;
   color: white;
 }
@@ -64,7 +64,7 @@
   border-radius: 3px;
   text-align: center;
   font-size: 16px;
-  margin-top: 30px;
+  margin-top: 15px;
   margin-left: 50px;
 }
 
@@ -77,8 +77,26 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 20px;
   width: 300px;
-  // border: 1px solid $lighter-gray;
   margin-left: 100px;
+}
+
+.profile-blurb{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.user-fullname {
+  font-weight: 600;
+}
+
+.user-blurb {
+  margin-top: 5px;
+}
+
+strong {
+  font-weight: bold;
 }
