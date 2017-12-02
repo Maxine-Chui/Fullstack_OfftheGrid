@@ -31,7 +31,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    // fetchPostComments: (postId) => dispatch(fetchPostComments(postId)),
     createLike: (postId) => dispatch(createLike(postId)),
     deleteLike: (postId) => dispatch(deleteLike(postId)),
     createComment: (postId, comment) => dispatch(createComment(postId, comment)),

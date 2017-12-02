@@ -12,10 +12,6 @@ class ProfilePostIndex extends React.Component {
     this.props.fetchAllComments();
   }
 
-  // componentWillUnmount(){
-  //   this.props.clearPosts();
-  // }
-
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.userId !== nextProps.match.params.userId) {
       this.props.fetchUserPosts(nextProps.match.params.userId);

@@ -13,10 +13,8 @@ class PostForm extends React.Component {
       img_url: '',
       caption: '',
       location: '',
-      // author_id: props.currentUser.id
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleImageUpload = this.handleImageUpload.bind(this);
   }
 
   handleSubmit(e){
@@ -25,7 +23,6 @@ class PostForm extends React.Component {
       img_url: this.state.img_url,
       caption: this.state.caption,
       location: this.state.location,
-      // author_id: this.props.currentUser.id
     };
     this.props.createPost(post);
   }

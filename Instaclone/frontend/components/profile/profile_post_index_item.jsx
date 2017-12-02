@@ -15,10 +15,6 @@ class ProfilePostIndexItem extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  // componentWillReceiveProps(newProps){
-  //
-  // }
-
   componentWillMount() {
       Modal.setAppElement('body');
    }
@@ -61,7 +57,6 @@ class ProfilePostIndexItem extends React.Component {
 
 
 }
-// <button className="exit-modal" onClick={this.closeModal}>X</button>
 
 
 export default ProfilePostIndexItem;

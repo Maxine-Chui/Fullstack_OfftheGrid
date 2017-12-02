@@ -9,16 +9,10 @@ class SessionForm extends React.Component {
       password: '',
       email: ''
     };
-    // this.handleSubmit = this.handleSubmit.bind(this);
     this.logInDemoUser = this.logInDemoUser.bind(this);
     this.logInUser = this.logInUser.bind(this);
     this.signUpUser = this.signUpUser.bind(this);
   }
-
-  // handleSubmit(e){
-  //   e.preventDefault();
-  //   const user = this.state;
-  // }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn){
@@ -192,7 +186,5 @@ class SessionForm extends React.Component {
     }
   }
 }
-// <div className="login-form-box"> {this.props.formType} </div>
-// or {this.navLink()}
 
 export default withRouter(SessionForm);

@@ -13,8 +13,6 @@ class UserInfo extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
-    // this.props.fetchFollowers(this.props.match.params.userId);
-    // this.props.fetchFollowees(this.props.match.params.userId);
   }
 
   componentWillReceiveProps(nextProps) {

@@ -24,8 +24,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId)),
     fetchAllComments: () => dispatch(fetchAllComments()),
-    // fetchPostComments: (postId) => dispatch(fetchPostComments(postId))
-    // clearPosts: () => dispatch(clearPosts())
   };
 };
 

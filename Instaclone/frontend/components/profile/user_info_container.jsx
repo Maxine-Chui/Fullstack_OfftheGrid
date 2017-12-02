@@ -4,8 +4,6 @@ import { fetchUser, createFollow, deleteFollow } from '../../actions/user_action
 import {
   fetchFollowers,
   fetchFollowees,
-  // createFollow,
-  // deleteFollow
 } from '../../actions/follows_actions';
 
 const mapStateToProps = (state) => {
@@ -23,8 +21,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchUser: (authorId) => dispatch(fetchUser(authorId)),
-    // fetchFollowers: (userId) => dispatch(fetchFollowers(userId)),
-    // fetchFollowees: (userId) => dispatch(fetchFollowees(userId)),
     createFollow: (userId, currentUserId) => dispatch(createFollow(userId, currentUserId)),
     deleteFollow: (userId, currentUserId) => dispatch(deleteFollow(userId, currentUserId))
   };
