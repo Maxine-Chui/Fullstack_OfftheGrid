@@ -12,7 +12,7 @@ Visit the live site here: https://fsp-offthegrid.herokuapp.com
 * User authentication
 ![alt-text](http://res.cloudinary.com/dqhhpt0sj/image/upload/v1512172417/Screen_Shot_2017-12-01_at_3.49.37_PM_x1xkmf.png)
 * Photo feed and Photo show
-![alt-text](http://res.cloudinary.com/dqhhpt0sj/image/upload/v1512172417/Screen_Shot_2017-12-01_at_3.51.05_PM_fikehk.png)
+![alt-text](http://res.cloudinary.com/dqhhpt0sj/image/upload/v1512172417/Screen_Shot_2017-12-01_at_3.50.44_PM_lydshp.png)
 * User Profiles
 ![alt-text](http://res.cloudinary.com/dqhhpt0sj/image/upload/v1512172417/Screen_Shot_2017-12-01_at_3.51.05_PM_fikehk.png)
 * Likes, Comments, and Follows
