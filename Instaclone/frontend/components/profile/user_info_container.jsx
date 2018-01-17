@@ -1,10 +1,16 @@
 import { connect } from 'react-redux';
 import UserInfo from './user_info';
-import { fetchUser, createFollow, deleteFollow } from '../../actions/user_actions';
 import {
+  fetchUser,
+  createFollow,
+  deleteFollow,
   fetchFollowers,
-  fetchFollowees,
-} from '../../actions/follows_actions';
+  fetchFollowees
+} from '../../actions/user_actions';
+// import {
+//   fetchFollowers,
+//   fetchFollowees,
+// } from '../../actions/follows_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -22,7 +28,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchUser: (authorId) => dispatch(fetchUser(authorId)),
     createFollow: (userId, currentUserId) => dispatch(createFollow(userId, currentUserId)),
-    deleteFollow: (userId, currentUserId) => dispatch(deleteFollow(userId, currentUserId))
+    deleteFollow: (userId, currentUserId) => dispatch(deleteFollow(userId, currentUserId)),
+    fetchFollowers: (userId) => dispatch(fetchFollowers(userId)),
+    fetchFollowees: (userId) => dispatch(fetchFollowees(userId))
   };
 };
 
