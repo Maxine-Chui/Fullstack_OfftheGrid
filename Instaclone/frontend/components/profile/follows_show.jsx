@@ -21,7 +21,8 @@ class FollowsShow extends React.Component {
             this.props.user.followers.map(follower => (
             <FollowsItem
               key={follower.follower_id}
-              follow={ follower }/>
+              follow={ follower }
+              followType="followers"/>
             ))
           }
         </ul>
@@ -38,7 +39,8 @@ class FollowsShow extends React.Component {
             this.props.user.followees.map(followee => (
             <FollowsItem
               key={followee.followee_id}
-              follow={ followee }/>
+              follow={ followee }
+              followType="followees"/>
             ))
           }
         </ul>
