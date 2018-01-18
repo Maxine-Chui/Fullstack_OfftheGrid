@@ -54,6 +54,13 @@ export const deleteLike = postId => dispatch => (
   APIPostsUtil.deleteLike(postId).then(post => dispatch(receivePost(post)))
 );
 
+export const createBookmark = postId => dispatch => (
+  APIPostsUtil.createBookmark(postId).then(post => dispatch(receivePost(post)))
+);
+
+export const deleteBookmark = postId => dispatch => (
+  APIPostsUtil.deleteBookmark(postId).then(post => dispatch(receivePost(post)))
+);
 // export const receiveErrors = errors => ({
 //   type: RECEIVE_POSTS_ERRORS,
 //   errors

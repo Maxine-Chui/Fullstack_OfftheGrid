@@ -11,6 +11,7 @@ class LikesAndComments extends React.Component {
     };
   this.toggleLike = this.toggleLike.bind(this);
   this.addComment = this.addComment.bind(this);
+  this.toggleBookmark = this.toggleBookmark.bind(this);
   }
 
 
@@ -26,7 +27,7 @@ class LikesAndComments extends React.Component {
     }
   }
 
-  toggleLike(e) {
+  toggleLike(e){
     e.preventDefault();
     const like = this.props.liked;
     if (like) {
@@ -50,6 +51,22 @@ class LikesAndComments extends React.Component {
     } else {
       return `${this.props.numLikes} like`;
     }
+  }
+
+  toggleBookmark(e){
+    e.preventDefault();
+    const bookmarked = this.props.bookmarked;
+    if (bookmarked) {
+      return this.props.deleteBookmark(this.props.postId);
+    } else {
+      return this.props.createBookmark(this.props.postId);
+    }
+  }
+
+  toggleBookmarkButton(){
+    const unbookmarkedButton = <button className="unbookmarked"><i className="fa fa-bookmark-o" onClick={this.toggleBookmark} aria-hidden="true"></i></button>
+    const bookmarkedButton = <button className="bookmarked"><i className="fa fa-bookmark" onClick={this.toggleBookmark} aria-hidden="true"></i></button>
+    return (this.props.bookmarked) ? bookmarkedButton : unbookmarkedButton;
   }
 
   update(field) {
@@ -78,7 +95,7 @@ class LikesAndComments extends React.Component {
         <div className="post-action-icons">
           <div className="like-icon">{this.toggleLikeButton()}</div>
           <label htmlFor="add-comment-enter" className="comment-icon"><i className="fa fa-comment-o" aria-hidden="true"></i></label>
-          <div className="bookmark-icon"><i className="fa fa-bookmark-o" aria-hidden="true"></i></div>
+          <div className="bookmark-icon">{this.toggleBookmarkButton()}</div>
         </div>
         <div className="num-likes">{this.likes()}</div>
 

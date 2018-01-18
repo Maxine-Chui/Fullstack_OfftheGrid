@@ -6,7 +6,7 @@ import {
   deletePost,
   fetchUserPosts,
   createLike,
-  deleteLike
+  deleteLike,
 } from '../../actions/posts_actions';
 import {
   fetchAllComments,
