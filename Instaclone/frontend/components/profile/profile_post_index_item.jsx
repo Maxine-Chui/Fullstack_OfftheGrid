@@ -44,7 +44,7 @@ class ProfilePostIndexItem extends React.Component {
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}
           backDropClosesModal={true}
-          shouldReturnFocusAfterClose={true}
+          shouldReturnFocusAfterClose={false}
           className="post-show-modal"
           overlayClassName="post-show-overlay"
           >

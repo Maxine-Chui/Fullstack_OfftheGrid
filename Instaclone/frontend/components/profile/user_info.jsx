@@ -112,7 +112,7 @@ class UserInfo extends React.Component {
             isOpen={this.state.modalOpen}
             onRequestClose={this.closeModal}
             backDropClosesModal={true}
-            shouldReturnFocusAfterClose={true}
+            shouldReturnFocusAfterClose={false}
             className="post-show-modal"
             overlayClassName="post-show-overlay"
             >
@@ -125,7 +125,7 @@ class UserInfo extends React.Component {
             isOpen={this.state.modalOpen2}
             onRequestClose={this.closeModal2}
             backDropClosesModal={true}
-            shouldReturnFocusAfterClose={true}
+            shouldReturnFocusAfterClose={false}
             className="post-show-modal"
             overlayClassName="post-show-overlay"
             >
