@@ -117,7 +117,7 @@ class UserInfo extends React.Component {
             >
             <button className="exit-modal"><i className="fa fa-times" onClick={this.closeModal} aria-hidden="true"></i></button>
 
-            <FollowsContainer {...this.state} followType="followers"/>
+            <FollowsContainer followType="followers"/>
           </Modal>
 
           <Modal
@@ -129,7 +129,7 @@ class UserInfo extends React.Component {
             >
             <button className="exit-modal"><i className="fa fa-times" onClick={this.closeModal2} aria-hidden="true"></i></button>
 
-            <FollowsContainer {...this.state} followType="followees"/>
+            <FollowsContainer followType="followees"/>
           </Modal>
 
           <div className="profile-blurb">
