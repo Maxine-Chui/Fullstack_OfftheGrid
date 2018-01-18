@@ -10,6 +10,8 @@
 #  img_url         :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  blurb           :string
+#  name            :string
 #
 
 class User < ApplicationRecord
@@ -43,6 +45,11 @@ class User < ApplicationRecord
   primary_key: :id,
   foreign_key: :followee_id,
   class_name: :Follow
+
+  has_many :bookmarks,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: :Bookmark
 
   attr_reader :password
 

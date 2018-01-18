@@ -29,4 +29,9 @@ class Post < ApplicationRecord
   foreign_key: :post_id,
   class_name: :Comment
 
+  has_many :bookmarks,
+  primary_key: :id,
+  foreign_key: :post_id,
+  class_name: :Bookmark
+
 end

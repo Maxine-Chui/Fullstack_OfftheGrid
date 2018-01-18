@@ -48,3 +48,18 @@ export const deleteLike = postId => (
     url: `/api/posts/${postId}/likes`
   })
 );
+
+export const createBookmark = postId => (
+  $.ajax({
+    method: 'POST',
+    url: `/api/posts/${postId}/bookmarks`,
+    data: { post_id: postId }
+  })
+);
+
+export const deleteBookmark = postId => (
+  $.ajax({
+    method: 'DELETE',
+    url:`/api/posts/${postId}/bookmarks`
+  })
+);

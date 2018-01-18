@@ -8,8 +8,10 @@
     json.likes post.likes.count
     if logged_in?
       json.liked_by_current_user !!post.likes.find_by(user_id: current_user.id)
+      json.bookmarked_by_current_user !!post.bookmarks.find_by(user_id: current_user.id)
     else
       json.liked_by_current_user false
+      json.bookmarked_by_current_user false
     end
     json.comments post.comments.map(&:id)
     json.age time_ago_in_words(post.created_at)

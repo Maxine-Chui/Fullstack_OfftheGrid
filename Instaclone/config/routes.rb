@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:create, :destroy, :index, :show] do
       resource :likes, only: [:create, :destroy]
       resources :comments, only: [:index]
+      resource :bookmarks, only: [:create, :destroy]
     end
     resources :comments, only: [:index, :create, :update, :destroy, :show]
     resources :users do
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
         get "followers", on: :collection
         get "followees", on: :collection
       end
+      resources :bookmarks, only: [:index]
     end
     resource :follows, only: [:create, :destroy, :show, :index]
   end

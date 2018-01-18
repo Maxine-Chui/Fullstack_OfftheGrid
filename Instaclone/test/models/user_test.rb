@@ -10,6 +10,8 @@
 #  img_url         :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  blurb           :string
+#  name            :string
 #
 
 require 'test_helper'
