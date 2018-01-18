@@ -16,7 +16,8 @@ import ProfilePostIndex from './profile_post_index';
 
 const mapStateToProps = (state) => {
   return {
-    posts: Object.values(state.entities.posts)
+    posts: Object.values(state.entities.posts),
+    loading: state.loading.loading
   };
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import ProfilePostIndexItem from './profile_post_index_item';
+import LoadingIcon from '../loading_icon';
 
 class ProfilePostIndex extends React.Component {
   constructor(props){
@@ -19,19 +20,25 @@ class ProfilePostIndex extends React.Component {
   }
 
   render() {
-    return(
-      <ul className="profile-grid">
-        {
-          this.props.posts.map(post => (
-            <ProfilePostIndexItem
-              key={post.id}
-              post={ post }
-              comments={post.comments}
-              />
-          ))
-        }
-      </ul>
-    );
+    if (this.props.loading) {
+      return (
+        <LoadingIcon />
+      );
+    } else {
+      return(
+        <ul className="profile-grid">
+          {
+            this.props.posts.map(post => (
+              <ProfilePostIndexItem
+                key={post.id}
+                post={ post }
+                comments={post.comments}
+                />
+            ))
+          }
+        </ul>
+      );
+    }
   }
 
 }
